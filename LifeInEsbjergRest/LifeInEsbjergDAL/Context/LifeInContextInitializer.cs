@@ -15,7 +15,7 @@ namespace LifeInEsbjergDAL.Context
         {
             IList<Company> companies = new List<Company>();
 
-
+            Category category0 = context.Categories.Add(new Category() { Id = 0, Name = "ALL" });
             Category category1 = context.Categories.Add(new Category() { Id = 1, Name = "Bank" });
             Category category2 = context.Categories.Add(new Category() { Id = 2, Name = "Plumber" });
             Category category3 = context.Categories.Add(new Category() { Id = 3, Name = "Electrician" });

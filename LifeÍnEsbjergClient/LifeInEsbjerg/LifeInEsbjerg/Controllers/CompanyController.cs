@@ -16,10 +16,29 @@ namespace LifeInEsbjerg.Controllers
         private Facade facade = new Facade();
 
         // GET: Company
-        public ActionResult Index()
+        public ActionResult Index(string searchString, int? id)
         {
             IEnumerable<Company> companies = facade.GetCompanyGateway().ReadAll();
+            IEnumerable<Category> categories = facade.GetCategoryGateway().ReadAll();
+            
+            
 
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                companies = companies.Where(s => s.Name.Contains(searchString));
+            }
+            if (id == 1)
+            {
+                id = null;
+            }
+            if (id > 1)
+            {
+                for(int i = 0; i < companies.Count(); ++i)
+                {
+                    companies = companies.Where(s => s.Category.Id.Equals(id));
+                }
+            }
+         
             Debug.WriteLine(companies);
             return View(companies);
 

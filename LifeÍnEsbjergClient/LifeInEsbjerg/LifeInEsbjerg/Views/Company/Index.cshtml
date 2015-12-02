@@ -5,6 +5,17 @@
 }
 
 <h2>Index</h2>
+
+@using (Html.BeginForm())
+{
+    <p>
+        Name: @Html.TextBox("SearchString") <br />
+        <input type="submit" value="Filter" />
+    </p>
+}
+
+ 
+
 <div class="row">
     <div class="col-md-2">       
        @{Html.RenderAction("ListOfCat", "Company");}
