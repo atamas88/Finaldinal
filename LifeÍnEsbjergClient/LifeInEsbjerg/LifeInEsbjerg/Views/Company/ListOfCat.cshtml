@@ -1,0 +1,14 @@
+﻿@model IEnumerable<DtoModel.Category>
+
+@foreach (var item in Model)
+{
+    
+    <ul class="nav nav-pills nav-stacked">
+        <li role="presentation">
+            <button type="button" style="width:150px;" class="btn btn-default">@Html.DisplayFor(modelItem => item.Name)</button>
+        </li>
+    </ul>
+
+}
+
+

@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LifeInEsbjerg", "LifeInEsbjerg\LifeInEsbjerg.csproj", "{5DD9097F-704A-4A5A-8743-24FBC5548BEE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DtoModel", "DtoModel\DtoModel.csproj", "{6AD87BD2-18F5-41C8-B8D9-BB3770E882FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LifeInEsbjergGateway", "LifeInEsbjergGateway\LifeInEsbjergGateway.csproj", "{F3DACD72-6FFD-44A4-975A-3952437315E3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5DD9097F-704A-4A5A-8743-24FBC5548BEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DD9097F-704A-4A5A-8743-24FBC5548BEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DD9097F-704A-4A5A-8743-24FBC5548BEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DD9097F-704A-4A5A-8743-24FBC5548BEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6AD87BD2-18F5-41C8-B8D9-BB3770E882FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AD87BD2-18F5-41C8-B8D9-BB3770E882FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AD87BD2-18F5-41C8-B8D9-BB3770E882FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AD87BD2-18F5-41C8-B8D9-BB3770E882FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3DACD72-6FFD-44A4-975A-3952437315E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3DACD72-6FFD-44A4-975A-3952437315E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3DACD72-6FFD-44A4-975A-3952437315E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3DACD72-6FFD-44A4-975A-3952437315E3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

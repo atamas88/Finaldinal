@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LifeInEsbjergDAL", "LifeInEsbjergDAL\LifeInEsbjergDAL.csproj", "{BB3ADB9B-5068-4D13-864A-9CBC3A86D2C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LifeInEsbjergRest1", "LifeInEsbjergRest1\LifeInEsbjergRest1.csproj", "{220CF4BC-447F-425C-96C8-33940DEDCE76}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BB3ADB9B-5068-4D13-864A-9CBC3A86D2C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB3ADB9B-5068-4D13-864A-9CBC3A86D2C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB3ADB9B-5068-4D13-864A-9CBC3A86D2C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB3ADB9B-5068-4D13-864A-9CBC3A86D2C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{220CF4BC-447F-425C-96C8-33940DEDCE76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{220CF4BC-447F-425C-96C8-33940DEDCE76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{220CF4BC-447F-425C-96C8-33940DEDCE76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{220CF4BC-447F-425C-96C8-33940DEDCE76}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
