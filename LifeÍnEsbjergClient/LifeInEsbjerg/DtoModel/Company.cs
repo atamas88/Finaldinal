@@ -48,28 +48,37 @@ namespace DtoModel
         {
             get
             {
-                double sum = 0;
-                double nr = 0;
-                for (int i = 0; i < Ratings.Count(); i++)
+                if (NrRate != 0)
                 {
-                    sum += Ratings.ElementAt(i).Quality;
-                    ++nr;
+                    double sum = 0;
+                    double nr = 0;
+                    for (int i = 0; i < Ratings.Count(); i++)
+                    {
+                        sum += Ratings.ElementAt(i).Quality;
+                        ++nr;
+                    }
+                    return (sum / nr) * 10;
                 }
-                return (sum / nr) * 10;
+                return 0;
             } }
 
         public double avgCust
         {
             get
             {
-                double sum = 0;
-                double nr = 0;
-                for (int i = 0; i < Ratings.Count(); i++)
+                if (NrRate != 0)
                 {
-                    sum += Ratings.ElementAt(i).CustomerService;
-                    ++nr;
+                    double sum = 0;
+                    double nr = 0;
+                    for (int i = 0; i < Ratings.Count(); i++)
+                    {
+                        sum += Ratings.ElementAt(i).CustomerService;
+                        ++nr;
+                    }
+
+                    return (sum / nr) * 10;
                 }
-                return (sum / nr) * 10;
+                return 0;
             }
         }
 
@@ -77,14 +86,18 @@ namespace DtoModel
         {
             get
             {
-                double sum = 0;
-                double nr = 0;
-                for (int i = 0; i < Ratings.Count(); i++)
+                if (NrRate != 0)
                 {
-                    sum += Ratings.ElementAt(i).Price;
-                    ++nr;
+                    double sum = 0;
+                    double nr = 0;
+                    for (int i = 0; i < Ratings.Count(); i++)
+                    {
+                        sum += Ratings.ElementAt(i).Price;
+                        ++nr;
+                    }
+                    return (sum / nr) * 10;
                 }
-                return (sum / nr) * 10;
+                return 0;
             }
         }
 
@@ -92,7 +105,11 @@ namespace DtoModel
         {
             get
             {
-                return (avgCust + avgPrice + avgQua) / 3;
+                if (NrRate != 0)
+                {
+                    return (avgCust + avgPrice + avgQua) / 3;
+                }
+                return 0;
             }
         }
 

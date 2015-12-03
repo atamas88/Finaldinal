@@ -20,12 +20,34 @@ namespace LifeInEsbjerg.Controllers
         {
             IEnumerable<Company> companies = facade.GetCompanyGateway().ReadAll();
             IEnumerable<Category> categories = facade.GetCategoryGateway().ReadAll();
-            
-            
+            IEnumerable<Company> companies1 = facade.GetCompanyGateway().ReadAll();
+            IList<Company> companies2 = new List<Company>();
+
 
             if (!String.IsNullOrEmpty(searchString))
             {
-                companies = companies.Where(s => s.Name.Contains(searchString));
+                //companies = companies.Where(s => s.Name.Contains(searchString));
+                for(int i = 0; i < companies1.Count(); ++i)
+                {
+                    bool containstag = false;
+                    bool containsname = false;
+                    for (int j = 0; j < companies1.ElementAt(i).Tags.Count(); ++j)
+                    {
+                        if(companies1.ElementAt(i).Tags.ElementAt(j).Name.Contains(searchString))
+                        {
+                            containstag = true;
+                        }
+                    }
+                    if(companies1.ElementAt(i).Name.Contains(searchString))
+                    {
+                        containsname = true;
+                    }
+                    if(containstag || containsname)
+                    {
+                        companies2.Add(companies1.ElementAt(i));
+                    }
+                }
+                companies = companies2;
             }
             if (id == 1)
             {
@@ -72,13 +94,24 @@ namespace LifeInEsbjerg.Controllers
             if (model.selectedTags != null)
             {
                 var newList = new List<Tag>();
-                foreach (int id in model.selectedTags)
+                List<Tag> allTag = new List<Tag>(facade.GetTagGateway().ReadAll());
+                for(int i = 0; i < allTag.Count(); ++i)
                 {
-                    newList.Add(new Tag() { Id = id });
+                    for (int j = 0; j < model.selectedTags.Count(); ++j)
+                    {
+                        if (allTag.ElementAt(i).Id == model.selectedTags.ElementAt(j))
+                            newList.Add(new Tag() { Id = model.selectedTags.ElementAt(j) , Name = allTag.ElementAt(i).Name});
+                    }
                 }
+
+                //foreach (int id in model.selectedTags)
+                //{
+                //    newList.Add(new Tag() { Id = id });
+                //}
                 model.Company.Tags = newList;
             }
-
+            model.Company.Ratings = new List<Rating>();
+            model.Company.NrRate = 0;
             facade.GetCompanyGateway().Add(model.Company);
             return RedirectToAction("Index", "Company");
         }
