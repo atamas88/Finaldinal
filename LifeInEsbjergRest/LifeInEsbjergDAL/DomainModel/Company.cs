@@ -66,9 +66,9 @@ namespace LifeInEsbjergDAL.DomainModel
         [DataMember]
         public virtual ICollection<Tag> Tags { get; set; }
         [DataMember]
-        public virtual ICollection<Rating> Ratings { get; set; }
+        public  ICollection<Rating> Ratings { get; set; }
         [DataMember]
-        public virtual ICollection<Review> Reviews { get; set; }
+        public  ICollection<Review> Reviews { get; set; }
         [DataMember]
         public virtual ICollection<Badge> Badges { get; set; }
 

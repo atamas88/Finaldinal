@@ -54,8 +54,8 @@ namespace LifeInEsbjergDAL.Context
                 MaxPrice = 1000,
                 Description = "Small local bank",
                 Category = category1,
-                Ratings = new List<Rating>() { rating4, rating3 },
-                Reviews = new List<Review>() { rev1, rev2 },
+                Ratings = new List<Rating>() { rating4 },
+                Reviews = new List<Review>() { rev1 },
                 Tags = new List<Tag>() { tag1, tag2, tag3}
 
             });
