@@ -16,3 +16,12 @@ C:\Info\3.Semester\anotherfinal\LifeÍnEsbjergClient\LifeInEsbjerg\DtoModel\bin\
 C:\Info\3.Semester\anotherfinal\LifeÍnEsbjergClient\LifeInEsbjerg\DtoModel\obj\Debug\DtoModel.csprojResolveAssemblyReference.cache
 C:\Info\3.Semester\anotherfinal\LifeÍnEsbjergClient\LifeInEsbjerg\DtoModel\obj\Debug\DtoModel.dll
 C:\Info\3.Semester\anotherfinal\LifeÍnEsbjergClient\LifeInEsbjerg\DtoModel\obj\Debug\DtoModel.pdb
+C:\Users\notandi\Documents\FinalLifeInEsbjerg\LifeÍnEsbjergClient\LifeInEsbjerg\DtoModel\bin\Debug\DtoModel.dll
+C:\Users\notandi\Documents\FinalLifeInEsbjerg\LifeÍnEsbjergClient\LifeInEsbjerg\DtoModel\bin\Debug\DtoModel.pdb
+C:\Users\notandi\Documents\FinalLifeInEsbjerg\LifeÍnEsbjergClient\LifeInEsbjerg\DtoModel\bin\Debug\Antlr3.Runtime.dll
+C:\Users\notandi\Documents\FinalLifeInEsbjerg\LifeÍnEsbjergClient\LifeInEsbjerg\DtoModel\bin\Debug\Newtonsoft.Json.dll
+C:\Users\notandi\Documents\FinalLifeInEsbjerg\LifeÍnEsbjergClient\LifeInEsbjerg\DtoModel\bin\Debug\Antlr3.Runtime.pdb
+C:\Users\notandi\Documents\FinalLifeInEsbjerg\LifeÍnEsbjergClient\LifeInEsbjerg\DtoModel\bin\Debug\Newtonsoft.Json.xml
+C:\Users\notandi\Documents\FinalLifeInEsbjerg\LifeÍnEsbjergClient\LifeInEsbjerg\DtoModel\obj\Debug\DtoModel.csprojResolveAssemblyReference.cache
+C:\Users\notandi\Documents\FinalLifeInEsbjerg\LifeÍnEsbjergClient\LifeInEsbjerg\DtoModel\obj\Debug\DtoModel.dll
+C:\Users\notandi\Documents\FinalLifeInEsbjerg\LifeÍnEsbjergClient\LifeInEsbjerg\DtoModel\obj\Debug\DtoModel.pdb

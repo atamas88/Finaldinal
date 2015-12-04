@@ -21,3 +21,15 @@ C:\Info\3.Semester\anotherfinal\LifeÍnEsbjergClient\LifeInEsbjerg\LifeInEsbjerg
 C:\Info\3.Semester\anotherfinal\LifeÍnEsbjergClient\LifeInEsbjerg\LifeInEsbjergGateway\obj\Debug\LifeInEsbjergGateway.csprojResolveAssemblyReference.cache
 C:\Info\3.Semester\anotherfinal\LifeÍnEsbjergClient\LifeInEsbjerg\LifeInEsbjergGateway\obj\Debug\LifeInEsbjergGateway.dll
 C:\Info\3.Semester\anotherfinal\LifeÍnEsbjergClient\LifeInEsbjerg\LifeInEsbjergGateway\obj\Debug\LifeInEsbjergGateway.pdb
+C:\Users\notandi\Documents\FinalLifeInEsbjerg\LifeÍnEsbjergClient\LifeInEsbjerg\LifeInEsbjergGateway\bin\Debug\LifeInEsbjergGateway.dll
+C:\Users\notandi\Documents\FinalLifeInEsbjerg\LifeÍnEsbjergClient\LifeInEsbjerg\LifeInEsbjergGateway\bin\Debug\LifeInEsbjergGateway.pdb
+C:\Users\notandi\Documents\FinalLifeInEsbjerg\LifeÍnEsbjergClient\LifeInEsbjerg\LifeInEsbjergGateway\bin\Debug\Antlr3.Runtime.dll
+C:\Users\notandi\Documents\FinalLifeInEsbjerg\LifeÍnEsbjergClient\LifeInEsbjerg\LifeInEsbjergGateway\bin\Debug\DtoModel.dll
+C:\Users\notandi\Documents\FinalLifeInEsbjerg\LifeÍnEsbjergClient\LifeInEsbjerg\LifeInEsbjergGateway\bin\Debug\Newtonsoft.Json.dll
+C:\Users\notandi\Documents\FinalLifeInEsbjerg\LifeÍnEsbjergClient\LifeInEsbjerg\LifeInEsbjergGateway\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\notandi\Documents\FinalLifeInEsbjerg\LifeÍnEsbjergClient\LifeInEsbjerg\LifeInEsbjergGateway\bin\Debug\DtoModel.pdb
+C:\Users\notandi\Documents\FinalLifeInEsbjerg\LifeÍnEsbjergClient\LifeInEsbjerg\LifeInEsbjergGateway\bin\Debug\Antlr3.Runtime.pdb
+C:\Users\notandi\Documents\FinalLifeInEsbjerg\LifeÍnEsbjergClient\LifeInEsbjerg\LifeInEsbjergGateway\bin\Debug\Newtonsoft.Json.xml
+C:\Users\notandi\Documents\FinalLifeInEsbjerg\LifeÍnEsbjergClient\LifeInEsbjerg\LifeInEsbjergGateway\obj\Debug\LifeInEsbjergGateway.csprojResolveAssemblyReference.cache
+C:\Users\notandi\Documents\FinalLifeInEsbjerg\LifeÍnEsbjergClient\LifeInEsbjerg\LifeInEsbjergGateway\obj\Debug\LifeInEsbjergGateway.dll
+C:\Users\notandi\Documents\FinalLifeInEsbjerg\LifeÍnEsbjergClient\LifeInEsbjerg\LifeInEsbjergGateway\obj\Debug\LifeInEsbjergGateway.pdb

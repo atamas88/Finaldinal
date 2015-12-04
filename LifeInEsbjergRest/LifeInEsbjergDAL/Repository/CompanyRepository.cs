@@ -19,7 +19,8 @@ namespace LifeInEsbjergDAL.Repository
             using (var ctx = new LifeInContext())
             {
 
-                return ctx.Companies.Include("Category").Include("Ratings").Include("Reviews").Include("Tags").ToList();
+                return ctx.Companies.Include("Ratings").ToList();
+                //.Include("Ratings").Include("Reviews").Include("Tags").
             }
         }
         public void Add(Company company)
