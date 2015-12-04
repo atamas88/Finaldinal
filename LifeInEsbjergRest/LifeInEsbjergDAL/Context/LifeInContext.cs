@@ -20,7 +20,7 @@ namespace LifeInEsbjergDAL.Context
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Rating>().HasRequired(s => s.Company).WithMany(r => r.Ratings);
+            //modelBuilder.Entity<Rating>().HasRequired(s => s.Company).WithMany(r => r.Ratings).HasForeignKey(c => c.Company_Id);
             modelBuilder.Entity<Company>().HasMany(c => c.Tags).WithMany();
         }
 

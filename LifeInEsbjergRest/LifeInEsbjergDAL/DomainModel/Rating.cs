@@ -26,8 +26,9 @@ namespace LifeInEsbjergDAL.DomainModel
         public double OverAll { get; set; }
         [DataMember]
         //[ForeignKey("Company_Id")]
+
+     
         public virtual Company Company { get; set; }
-        //public int Company_Id { get; set; }
         //public virtual User user { get; set; }
     }
 }

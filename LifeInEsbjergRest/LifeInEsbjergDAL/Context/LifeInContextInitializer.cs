@@ -29,10 +29,25 @@ namespace LifeInEsbjergDAL.Context
             Rating rating2 = context.Ratings.Add(new Rating() { Id = 2, CustomerService = 9, Quality = 7, Price = 8, OverAll = 8 });
             Rating rating3 = context.Ratings.Add(new Rating() { Id = 3, CustomerService = 9, Quality = 10, Price = 5, OverAll = 8 });
             Rating rating4 = context.Ratings.Add(new Rating() { Id = 4, CustomerService = 6, Quality = 7, Price = 4, OverAll = 5 });
+            Rating rating5 = context.Ratings.Add(new Rating() { Id = 5, CustomerService = 10, Quality = 8, Price = 9, OverAll = 8 });
+            Rating rating6 = context.Ratings.Add(new Rating() { Id = 6, CustomerService = 9, Quality = 7, Price = 8, OverAll = 8 });
+            Rating rating7 = context.Ratings.Add(new Rating() { Id = 7, CustomerService = 9, Quality = 10, Price = 5, OverAll = 8 });
+            Rating rating8 = context.Ratings.Add(new Rating() { Id = 8, CustomerService = 6, Quality = 7, Price = 4, OverAll = 5 });
+            Rating rating9 = context.Ratings.Add(new Rating() { Id = 9, CustomerService = 10, Quality = 8, Price = 9, OverAll = 8 });
+            Rating rating10 = context.Ratings.Add(new Rating() { Id = 10, CustomerService = 9, Quality = 7, Price = 8, OverAll = 8 });
+            Rating rating11 = context.Ratings.Add(new Rating() { Id = 11, CustomerService = 9, Quality = 10, Price = 5, OverAll = 8 });
+            Rating rating12 = context.Ratings.Add(new Rating() { Id = 12, CustomerService = 6, Quality = 7, Price = 4, OverAll = 5 });
+
 
 
             Review rev1 = context.Reviews.Add(new Review() { Id = 1, Title = "Great Stuff", Text = "I like the overall experience" });
             Review rev2 = context.Reviews.Add(new Review() { Id = 2, Title = "Awfull", Text = "Very very bad experience" });
+            Review rev3 = context.Reviews.Add(new Review() { Id = 3, Title = "Good", Text = "I like the overall experience" });
+            Review rev4 = context.Reviews.Add(new Review() { Id = 4, Title = "Baaad", Text = "Very very bad experience" });
+            Review rev5 = context.Reviews.Add(new Review() { Id = 5, Title = "Yeees", Text = "I like the overall experience" });
+            Review rev6 = context.Reviews.Add(new Review() { Id = 6, Title = "craap", Text = "Very very bad experience" });
+
+
 
             Tag tag1 = context.Tags.Add(new Tag() { Id = 1, Name = "tomato" });
             Tag tag2 = context.Tags.Add(new Tag() { Id = 1, Name = "cheap" });
@@ -54,9 +69,10 @@ namespace LifeInEsbjergDAL.Context
                 MaxPrice = 1000,
                 Description = "Small local bank",
                 Category = category1,
-                Ratings = new List<Rating>() { rating4 },
+                Ratings = new List<Rating>() { rating1 },
                 Reviews = new List<Review>() { rev1 },
-                Tags = new List<Tag>() { tag1, tag2, tag3}
+                Tags = new List<Tag>() { tag1, tag2, tag3 },
+                NrRate = 1
 
             });
             companies.Add(new Company()
@@ -72,9 +88,10 @@ namespace LifeInEsbjergDAL.Context
                 MaxPrice = 2500,
                 Description = "Innovative iphone fixing",
                 Category = category4,
-                Ratings = new List<Rating>() { rating1, rating4 },
-                Reviews = new List<Review>() { rev1 },
-                Tags = new List<Tag>() { tag4 }
+                Ratings = new List<Rating>() { rating2, rating3 },
+                Reviews = new List<Review>() { rev2 },
+                Tags = new List<Tag>() { tag4 },
+                NrRate = 2
 
             });
 
@@ -91,9 +108,10 @@ namespace LifeInEsbjergDAL.Context
                 MaxPrice = 100000,
                 Description = "Safe Shipping all the way!",
                 Category = category5,
-                Ratings = new List<Rating>() { rating2, rating1, rating3 },
-                Reviews = new List<Review>() { rev2 },
-                Tags = new List<Tag>() { tag1, tag4, tag5 }
+                Ratings = new List<Rating>() { rating4, rating5, rating6 },
+                Reviews = new List<Review>() { rev3 },
+                Tags = new List<Tag>() { tag1, tag4, tag5 },
+                NrRate = 3
 
             });
 
@@ -110,9 +128,10 @@ namespace LifeInEsbjergDAL.Context
                 MaxPrice = 1000,
                 Description = "Shop with us and get a free cart!",
                 Category = category6,
-                Ratings = new List<Rating>() { rating1, rating3 , rating4 },
-                Reviews = new List<Review>() { rev2 },
-                Tags = new List<Tag>() { tag4, tag5, tag3 }
+                Ratings = new List<Rating>() { rating7, rating8 , rating9 },
+                Reviews = new List<Review>() { rev4 },
+                Tags = new List<Tag>() { tag4, tag5, tag3 },
+                NrRate = 3
 
             });
 
@@ -129,9 +148,10 @@ namespace LifeInEsbjergDAL.Context
                 MaxPrice = 150,
                 Description = "On the run and need fuel? Come by and crab acup today!",
                 Category = category7,
-                Ratings = new List<Rating>() { rating2, rating3 , rating1 },
-                Reviews = new List<Review>() { rev1 },
-                Tags = new List<Tag>() { tag5 }
+                Ratings = new List<Rating>() { rating10 },
+                Reviews = new List<Review>() { rev5 },
+                Tags = new List<Tag>() { tag5 },
+                NrRate = 1
 
             });
 
@@ -149,9 +169,10 @@ namespace LifeInEsbjergDAL.Context
                 MaxPrice = 500,
                 Description = "Dedicaded hair salon for the wildness in your hair.",
                 Category = category8,
-                Ratings = new List<Rating>() { rating2, rating3 },
-                Reviews = new List<Review>() { rev1 },
-                Tags = new List<Tag>() { tag3,tag4 }
+                Ratings = new List<Rating>() { rating11, rating12 },
+                Reviews = new List<Review>() { rev6 },
+                Tags = new List<Tag>() { tag3,tag4 },
+                NrRate = 2
 
             });
 
