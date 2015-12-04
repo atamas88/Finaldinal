@@ -241,6 +241,7 @@
     <Content Include="Views\Company\Edit.cshtml" />
     <Content Include="Views\Company\Details.cshtml" />
     <Content Include="Views\Company\ListOfCat.cshtml" />
+    <Content Include="Views\Company\ListOfTags.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

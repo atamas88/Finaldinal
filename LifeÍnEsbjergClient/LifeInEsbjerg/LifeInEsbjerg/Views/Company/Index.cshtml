@@ -10,11 +10,18 @@
 {
     <p>
         Name: @Html.TextBox("SearchString") <br />
-        <input type="submit" value="Filter" />
+        <input type="submit" value="Search" />
     </p>
 }
 
- 
+
+@{Html.RenderAction("ListOfTags", "Company"); }
+
+
+
+
+
+
 
 <div class="row">
     <div class="col-md-2">       
