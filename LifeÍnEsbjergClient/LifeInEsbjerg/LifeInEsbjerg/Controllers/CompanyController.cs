@@ -73,6 +73,11 @@ namespace LifeInEsbjerg.Controllers
             return PartialView(categories);
         }
 
+        public ActionResult ListOfTags()
+        {
+            IEnumerable<Tag> tags = facade.GetTagGateway().ReadAll();
+            return PartialView(tags);
+        }
         public ActionResult Create()
         {
             var model = new LifeInEsbjergViewModel() { Category = new SelectList(facade.GetCategoryGateway().ReadAll(), "Id", "Name"),

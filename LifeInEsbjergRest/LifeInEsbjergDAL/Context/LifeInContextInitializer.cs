@@ -49,10 +49,10 @@ namespace LifeInEsbjergDAL.Context
 
 
             Tag tag1 = context.Tags.Add(new Tag() { Id = 1, Name = "tomato" });
-            Tag tag2 = context.Tags.Add(new Tag() { Id = 1, Name = "cheap" });
-            Tag tag3 = context.Tags.Add(new Tag() { Id = 1, Name = "men hair cutting" });
-            Tag tag4 = context.Tags.Add(new Tag() { Id = 1, Name = "good value" });
-            Tag tag5 = context.Tags.Add(new Tag() { Id = 1, Name = "ship" });
+            Tag tag2 = context.Tags.Add(new Tag() { Id = 2, Name = "cheap" });
+            Tag tag3 = context.Tags.Add(new Tag() { Id = 3, Name = "men hair cutting" });
+            Tag tag4 = context.Tags.Add(new Tag() { Id = 4, Name = "good value" });
+            Tag tag5 = context.Tags.Add(new Tag() { Id = 5, Name = "ship" });
             //Customer customer1 = context.Customers.Add(new Customer() { Id = 1, Name = "Kim Cormen", Email = "Google@google.tinfoil", Password = "1234abcd" });
 
             companies.Add(new Company()
