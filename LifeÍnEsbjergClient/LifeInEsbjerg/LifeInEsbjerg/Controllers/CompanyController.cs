@@ -64,7 +64,6 @@ namespace LifeInEsbjerg.Controllers
             Debug.WriteLine(companies);
             return View(companies);
 
-
         }
 
         public ActionResult ListOfCat()
