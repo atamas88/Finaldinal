@@ -14,6 +14,8 @@
         public double OverAll { get; set; }
         
         public virtual Company Company { get; set; }
+
+       
         //public virtual User user { get; set; }
     }
 }
