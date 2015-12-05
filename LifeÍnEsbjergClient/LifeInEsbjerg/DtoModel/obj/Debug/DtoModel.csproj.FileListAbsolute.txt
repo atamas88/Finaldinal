@@ -25,3 +25,5 @@ C:\Users\notandi\Documents\FinalLifeInEsbjerg\LifeÍnEsbjergClient\LifeInEsbjerg
 C:\Users\notandi\Documents\FinalLifeInEsbjerg\LifeÍnEsbjergClient\LifeInEsbjerg\DtoModel\obj\Debug\DtoModel.csprojResolveAssemblyReference.cache
 C:\Users\notandi\Documents\FinalLifeInEsbjerg\LifeÍnEsbjergClient\LifeInEsbjerg\DtoModel\obj\Debug\DtoModel.dll
 C:\Users\notandi\Documents\FinalLifeInEsbjerg\LifeÍnEsbjergClient\LifeInEsbjerg\DtoModel\obj\Debug\DtoModel.pdb
+C:\Users\notandi\Documents\FinalLifeInEsbjerg\LifeÍnEsbjergClient\LifeInEsbjerg\DtoModel\bin\Debug\DtoModel.dll.config
+C:\Users\notandi\Documents\FinalLifeInEsbjerg\LifeÍnEsbjergClient\LifeInEsbjerg\DtoModel\bin\Debug\WebGrease.dll
