@@ -30,5 +30,6 @@ namespace LifeInEsbjergDAL.Context
         public DbSet<Review> Reviews { get; set; }
 
         public DbSet<Tag> Tags { get; set; }
+        //public DbSet<AccountBindingModels.RegisterBindingModel> AccModels { get; set; }
     }
 }

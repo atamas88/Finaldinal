@@ -55,6 +55,14 @@ namespace LifeInEsbjergDAL.Context
             Tag tag5 = context.Tags.Add(new Tag() { Id = 5, Name = "ship" });
             //Customer customer1 = context.Customers.Add(new Customer() { Id = 1, Name = "Kim Cormen", Email = "Google@google.tinfoil", Password = "1234abcd" });
 
+            //AccountBindingModels.RegisterBindingModel user1 = new AccountBindingModels.RegisterBindingModel();
+            //user1.Email = "admin@gmail.com";
+            //user1.Password = "Bla123.";
+            //user1.ConfirmPassword = "Bla123.";
+
+
+
+
             companies.Add(new Company()
             {
                 CVR = 23598712,

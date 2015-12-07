@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="Context\LifeInContext.cs" />
     <Compile Include="Context\LifeInContextInitializer.cs" />
+    <Compile Include="DomainModel\AccountBindingModels.cs" />
     <Compile Include="DomainModel\Badge.cs" />
     <Compile Include="DomainModel\Category.cs" />
     <Compile Include="DomainModel\Company.cs" />

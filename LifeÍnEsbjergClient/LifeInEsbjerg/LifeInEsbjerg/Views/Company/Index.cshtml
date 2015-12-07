@@ -8,79 +8,80 @@
 
 @using (Html.BeginForm())
 {
-    <p>
-        Name: @Html.TextBox("SearchString") <br />
-        <input type="submit" value="Search" />
-    </p>
-}
+    @*<p>
 
-
-@{Html.RenderAction("ListOfTags", "Company"); }
-
-
-
-
-
-
-
-<div class="row">
-    <div class="col-md-2">       
-       @{Html.RenderAction("ListOfCat", "Company");}
-   </div>
-    <div class="col-md-10">
-        <table class="table">
-
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.ImageUrl)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Name)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Category)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Address)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Description)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.OpenHours)
-                </th>
-
-            </tr>
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>
-                        <img src="@item.ImageUrl" width="100" />
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Name)
-                    </td>
-
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Category.Name)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Address)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Description)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.OpenHours)
-                    </td>
-                    <td>
-                        @Html.ActionLink("Update", "Edit", new { id = item.Id }) |
-                        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-                    </td>
-                </tr>
-            }
-
-        </table>
+            <input type="submit" value="Search" />
+        </p>*@
+    <div style="width:200px;">
+        <div class="input-group">
+            @Html.TextBox("SearchString")
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="submit">Go!</button>
+            </span>
+        </div><!-- /input-group -->
     </div>
+}
+<div class="row"></div>
+<div class="col-md-2">
+    @{Html.RenderAction("ListOfCat", "Company");}
+    @{Html.RenderAction("ListOfTags", "Company"); }
+</div>
+<h1>Companies</h1>
+<p>Listing of the companies in Esbjerg</p>
+
+
+
+<div class="col-md-10" style="background-color:dimgray">
+    @foreach (var item in Model)
+    {
+
+        <div class="container container-pad" id="property-listings" style="margin:5px; padding:5px; background-color:white;">
+
+            <div class="row">
+                <div class="col-sm-6">
+
+                    <!-- Begin Listing: 609 W GRAVERS LN-->
+                    <div class="brdr bgc-fff pad-10 box-shad btm-mrg-20">
+                        <div class="media">
+                            <a class="pull-left" href="#" target="_parent">
+                                <img alt="image" class="img-responsive" src="@item.ImageUrl" width="100" />
+                            </a>
+
+                            <div class="clearfix visible-sm"></div>
+
+                            <div class="media-body fnt-smaller">
+                                <a href="#" target="_parent"></a>
+
+                                <h4 class="media-heading">
+                                    <a href="#" target="_parent">@Html.DisplayFor(modelItem => item.Name)<small class="pull-right">@Html.DisplayFor(modelItem => item.Address)</small></a>
+                                </h4>
+
+                                @*<-- WE WANT TO PUT THE TAGS IN HERE-->*@
+                                <ul class="list-inline mrg-0 btm-mrg-10 clr-535353">
+                                    <li>TAG</li>
+
+                                    <li style="list-style: none">|</li>
+
+                                    <li>Open from: @Html.DisplayFor(modelItem => item.OpenHours)</li>
+
+                                    <li style="list-style: none">|</li>
+
+                                    <li>   @Html.DisplayFor(modelItem => item.Category.Name) </li>
+                                </ul>
+
+                                <p class=" fnt-smaller fnt-lighter fnt-arial">
+                                    @Html.DisplayFor(modelItem => item.Description)
+                                </p><span class="fnt-smaller fnt-lighter fnt-arial">
+                                    @Html.ActionLink("Update", "Edit", new { id = item.Id }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                                </span>
+                            </div>
+                        </div>
+                    </div><!-- End Listing-->
+
+                </div><!-- End Col -->
+            </div><!-- End row -->
+        </div><!-- End container -->
+    }
 </div>
