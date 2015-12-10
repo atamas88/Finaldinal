@@ -118,6 +118,12 @@
         </div>
     </div>
 
+    @Html.ActionLink("Rate","AddRating", new { id = Model.Id})
+
+    @*<div style="text-decoration:solid;  margin-right:10px;">
+        <button type="button" onclick="location.href='@Url.Action("Rate","AddRating", new { id = Model.Id})'" class="btn btn-info">Rate!</button>
+    </div>*@
+
     @Html.Label("Reviews")
         <table>
             <tr>
@@ -131,8 +137,8 @@
 
             @foreach (var item in Model.Reviews)
             {
-                <tr style="border-bottom:1px solid #808080;">
-                    <td>
+                <tr class="well">
+                    <td style="font-weight:lighter;">
                         @Html.DisplayFor(modelItem => item.Title) &nbsp;&nbsp;
                     </td>
                     <td>
@@ -140,7 +146,7 @@
                     </td>
 
                 </tr>
-
+             
             }
 
         </table>

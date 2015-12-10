@@ -64,7 +64,6 @@ namespace LifeInEsbjerg.Controllers
             Debug.WriteLine(companies);
             return View(companies);
 
-
         }
 
         public ActionResult ListOfCat()
@@ -160,6 +159,8 @@ namespace LifeInEsbjerg.Controllers
                 
             };
 
+            model.ratings = company.Ratings.ToList();
+
             if (company == null)
             {
                 return HttpNotFound();
@@ -168,7 +169,7 @@ namespace LifeInEsbjerg.Controllers
         }
 
         [HttpPost]
-        public ActionResult Edit([Bind(Include = "Company, Category, selectedCat")] LifeInEsbjergViewModel model)
+        public ActionResult Edit([Bind(Include = "Company, Category, selectedCat, Tags, selectedTags, Ratings")] LifeInEsbjergViewModel model)
         {
 
             //ViewBag.Genres = new SelectList(db.Genres, "Id", "Name");
@@ -181,6 +182,25 @@ namespace LifeInEsbjerg.Controllers
                 {
                     model.Company.Category = allCat.ElementAt(i);
                 }
+            }
+            if (model.selectedTags != null)
+            {
+                var newList = new List<Tag>();
+                List<Tag> allTag = new List<Tag>(facade.GetTagGateway().ReadAll());
+                for (int i = 0; i < allTag.Count(); ++i)
+                {
+                    for (int j = 0; j < model.selectedTags.Count(); ++j)
+                    {
+                        if (allTag.ElementAt(i).Id == model.selectedTags.ElementAt(j))
+                            newList.Add(new Tag() { Id = model.selectedTags.ElementAt(j), Name = allTag.ElementAt(i).Name });
+                    }
+                }
+
+                //foreach (int id in model.selectedTags)
+                //{
+                //    newList.Add(new Tag() { Id = id });
+                //}
+                model.Company.Tags = newList;
             }
             if (ModelState.IsValid)
             {
@@ -217,6 +237,40 @@ namespace LifeInEsbjerg.Controllers
                 return HttpNotFound();
             }
             return View(company);
+        }
+        [HttpGet]
+        public ActionResult AddRating(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Company company = facade.GetCompanyGateway().Find(id);
+            var model = new RatingViewModel() { company = company };
+            return View(model);
+        }
+        [HttpPost]
+        public ActionResult AddRating(RatingViewModel model)
+        {
+            Rating rating = new Rating()
+            {
+                Quality = model.rating.Quality,
+                CustomerService = model.rating.CustomerService,
+                Price = model.rating.Price,
+                OverAll = model.rating.OverAll
+            };
+
+            int id = Convert.ToInt32(model.company.Id);
+            Company company = facade.GetCompanyGateway().Find(id);
+
+            List<Rating> ratings = company.Ratings.ToList();
+
+            ratings.Add(rating);
+
+            company.Ratings = ratings;
+            facade.GetCompanyGateway().Update(company);
+            facade.GetRatingGateway().Add(rating);
+            return RedirectToAction(actionName: "Details", controllerName:"Company", routeValues: new { Id = id});
         }
 
     }

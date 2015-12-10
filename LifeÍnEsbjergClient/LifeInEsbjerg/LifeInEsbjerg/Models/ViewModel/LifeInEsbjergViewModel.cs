@@ -18,6 +18,8 @@ namespace LifeInEsbjerg.Models.ViewModel
         public MultiSelectList Tags { get; set; }
 
         public List<int> selectedTags { get; set; }
+
+        public List<Rating> ratings { get; set; }
     }
 
 }

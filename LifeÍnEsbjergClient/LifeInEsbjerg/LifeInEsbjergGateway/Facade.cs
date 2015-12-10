@@ -22,5 +22,10 @@ namespace LifeInEsbjergGateway
         {
             return new TagGatewayService();
         }
+
+        public RatingGatewayService GetRatingGateway()
+        {
+            return new RatingGatewayService();
+        }
     }
 }

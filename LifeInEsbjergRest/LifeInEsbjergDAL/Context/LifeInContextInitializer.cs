@@ -39,7 +39,6 @@ namespace LifeInEsbjergDAL.Context
             Rating rating12 = context.Ratings.Add(new Rating() { Id = 12, CustomerService = 6, Quality = 7, Price = 4, OverAll = 5 });
 
 
-
             Review rev1 = context.Reviews.Add(new Review() { Id = 1, Title = "Great Stuff", Text = "I like the overall experience" });
             Review rev2 = context.Reviews.Add(new Review() { Id = 2, Title = "Awfull", Text = "Very very bad experience" });
             Review rev3 = context.Reviews.Add(new Review() { Id = 3, Title = "Good", Text = "I like the overall experience" });

@@ -13,6 +13,7 @@ namespace LifeInEsbjergDAL.DomainModel
     [Table("Rating")]
     public class Rating
     {
+        
         [Key]
         [DataMember]
         public int Id { get; set; }
@@ -24,6 +25,7 @@ namespace LifeInEsbjergDAL.DomainModel
         public int Price { get; set; }
         [DataMember]
         public double OverAll { get; set; }
+
         [DataMember]
         //[ForeignKey("Company_Id")]
 

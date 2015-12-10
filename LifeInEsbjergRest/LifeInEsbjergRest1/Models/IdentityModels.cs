@@ -21,7 +21,7 @@ namespace LifeInEsbjergRest1.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("LifeInEsbjergDB", false)
         {
         }
         

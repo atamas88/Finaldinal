@@ -18,8 +18,10 @@ namespace LifeInEsbjergDAL.Repository
         {
             using (var ctx = new LifeInContext())
             {
+
                 //ctx.Companies.Include("Rating")
                 return ctx.Companies.Include("Category").Include(c => c.Ratings).Include("Reviews").Include("Tags").ToList();
+
             }
         }
         public void Add(Company company)
@@ -65,22 +67,47 @@ namespace LifeInEsbjergDAL.Repository
         {
             using (var ctx = new LifeInContext())
             {
-                var companyDB = ctx.Companies.FirstOrDefault(x => x.Id == company.Id);
-
-                companyDB.CVR = company.CVR;
-                companyDB.Name = company.Name;
-                companyDB.ImageUrl = company.ImageUrl;
-                companyDB.Address = company.Address;
-                companyDB.WebSite = company.WebSite;
-                companyDB.Tel = company.Tel;
-                companyDB.OpenHours = company.OpenHours;
-                companyDB.MinPrice = company.MinPrice;
-                companyDB.MaxPrice = company.MaxPrice;
-                companyDB.Description = company.Description;
-                companyDB.NrRate = company.NrRate;
-                companyDB.AvgOvr = company.AvgOvr;
+                var companyDB = ctx.Companies.
+                    Include("Category").
+                    Include("Tags").
+                    Include("Ratings").
+                    Include("Reviews").
+                    FirstOrDefault(x => x.Id == company.Id);
+                ctx.Entry(companyDB).CurrentValues.SetValues(company);
+                companyDB.Tags.Clear();
                 companyDB.Category = company.Category;
                 ctx.Entry(company.Category).State = EntityState.Unchanged;
+                foreach (var item in company.Tags)
+                {
+                    companyDB.Tags.Add(ctx.Tags.FirstOrDefault(x => x.Id == item.Id));
+                }
+                //companyDB.CVR = company.CVR;
+                //companyDB.Name = company.Name;
+                //companyDB.ImageUrl = company.ImageUrl;
+                //companyDB.Address = company.Address;
+                //companyDB.WebSite = company.WebSite;
+                //companyDB.Tel = company.Tel;
+                //companyDB.OpenHours = company.OpenHours;
+                //companyDB.MinPrice = company.MinPrice;
+                //companyDB.MaxPrice = company.MaxPrice;
+                //companyDB.Description = company.Description;
+                //companyDB.NrRate = company.NrRate;
+                //companyDB.AvgOvr = company.AvgOvr;
+                //companyDB.Category = company.Category;
+                //companyDB.Ratings = company.Ratings;
+                //companyDB.Tags = company.Tags;
+                //ctx.Entry(company.Category).State = EntityState.Unchanged;
+                //foreach (var item in company.Tags)
+                //{
+                //    ctx.Entry(item).State = EntityState.Unchanged;
+                //}
+                //ctx.Entry(company.Tags).State = EntityState.Unchanged;
+
+                //companyDB.Ratings = company.Ratings;
+                //foreach (var item in company.Ratings)
+                //{
+                //    ctx.Entry(item).State = EntityState.Unchanged;
+                //}
 
                 ctx.SaveChanges();
 

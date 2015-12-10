@@ -1,32 +1,203 @@
 ﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
-}
+ padding-top: 10px;
+ padding-bottom: 20px;
+ background-color: rgb(248, 248, 248);
+ }
 
 /* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
-}
+ .body-content {
+ padding-left: 15px;
+ padding-right: 15px;
+ }
 
 /* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
-.dl-horizontal dt {
-    white-space: normal;
-}
+ will truncate terms that are too long to fit in the left column 
+ */
+ .dl-horizontal dt {
+ white-space: normal;
+ }
 
 /* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
-}
-/* Navigation for categories */
-.list-group.panel > .list-group-item {
-  border-bottom-right-radius: 4px;
-  border-bottom-left-radius: 4px
-}
+ input,
+ select,
+ textarea {
+ max-width: 280px;
+ }
+ /* Navigation for categories */
+ .list-group.panel > .list-group-item {
+ border-bottom-right-radius: 4px;
+ border-bottom-left-radius: 4px;
+ }
+
 .list-group-submenu {
-  margin-left:20px;
-}
+ margin-left: 20px;
+ }
+ /*the front page*/
+ /**** BASE ****/
+ body {
+ color: #535353;
+ }
+
+a {
+ color: #000000;
+ text-decoration: none !important;
+ }
+
+/**** LAYOUT ****/
+ .list-inline > li {
+ padding: 0 10px 0 0;
+ }
+
+.container-pad {
+ padding: 30px 15px;
+ }
+
+/**** MODULE ****/
+ .bgc-fff {
+ background-color: ‪#‎fff‬ !important;
+ }
+
+.box-shad {
+ -webkit-box-shadow: 1px 1px 0 rgba(0,0,0,.2);
+ box-shadow: 1px 1px 0 rgba(0,0,0,.2);
+ }
+
+.brdr {
+ border: 1px solid ‪#‎ededed‬;
+ }
+
+/* Font changes */
+ .fnt-smaller {
+ font-size: .9em;
+ }
+
+.fnt-lighter {
+ color: ‪#‎bbb‬;
+ }
+
+/* Padding - Margins */
+ .pad-10 {
+ padding: 10px !important;
+ }
+
+.mrg-0 {
+ margin: 0 !important;
+ }
+
+.btm-mrg-10 {
+ margin-bottom: 10px !important;
+ }
+
+.btm-mrg-20 {
+ margin-bottom: 20px !important;
+ }
+
+/* Color */
+ .clr-535353 {
+ color: #535353;
+ }
+
+/**** MEDIA QUERIES ****/
+ @media only screen and (max-width: 991px) {
+‪#‎property‬-listings .property-listing {
+ padding: 5px !important;
+ }
+
+#property-listings .property-listing a {
+ margin: 0;
+ }
+
+#property-listings .property-listing .media-body {
+ padding: 10px;
+ }
+ }
+
+@media only screen and (min-width: 992px) {
+ #property-listings .property-listing img {
+ max-width: 180px;
+ }
+ }
+
+/*FOR THE LAYOUT PAGE*/
+
+body {
+ padding: 40px 0px;
+ }
+
+.navbar-collapse {
+ position: relative;
+ padding-top: 30px !important;
+ max-height: 270px;
+ }
+
+.navbar-collapse form[role="search"] {
+ position: absolute;
+ top: 0px;
+ right: 0px;
+ width: 100%;
+ padding: 0px;
+ margin: 0px;
+ z-index: 0;
+ }
+
+.navbar-collapse form[role="search"] button,
+ .navbar-collapse form[role="search"] input {
+ padding: 8px 12px;
+ border-radius: 0px;
+ border-width: 0px;
+ color: rgb(119, 119, 119);
+ background-color: rgb(248, 248, 248);
+ border-color: rgb(231, 231, 231);
+ box-shadow: none;
+ outline: none;
+ }
+
+.navbar-collapse form[role="search"] input {
+ padding: 16px 12px;
+ font-size: 14pt;
+ font-style: italic;
+ color: rgb(160, 160, 160);
+ box-shadow: none;
+ }
+
+@media (min-width: 768px) {
+ .navbar-collapse {
+ padding-top: 0px !important;
+ padding-right: 38px !important;
+ }
+
+.navbar-collapse form[role="search"] {
+ width: 38px;
+ }
+
+.navbar-collapse form[role="search"] button,
+ .navbar-collapse form[role="search"] input {
+ padding: 15px 12px;
+ }
+
+.navbar-collapse form[role="search"] input {
+ padding: 25px 12px;
+ font-size: 18pt;
+ opacity: 0;
+ display: none;
+ }
+
+.navbar-collapse form[role="search"].active {
+ width: 100%;
+ }
+
+.navbar-collapse form[role="search"].active button,
+ .navbar-collapse form[role="search"].active input {
+ display: table-cell;
+ opacity: 1;
+ }
+
+.navbar-collapse form[role="search"].active input {
+ width: 100%;
+ text-align: right;
+ }
+
+.navbar-collapse form[role="search"].active button[type="submit"] {
+ background-color: rgb(231, 231, 231);
+ }
+ }
