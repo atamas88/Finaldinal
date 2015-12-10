@@ -10,7 +10,11 @@
 {
     @*<p>
 
+<<<<<<< HEAD
         <input type="submit" value="Search" />
+=======
+            <input type="submit" value="Search" />
+>>>>>>> 9415bd34f15ba531bdf6079fbafa86e187c28e3c
         </p>*@
     <div style="width:200px;">
         <div class="input-group">
@@ -19,18 +23,39 @@
                 <button class="btn btn-default" type="submit">Go!</button>
             </span>
         </div><!-- /input-group -->
+<<<<<<< HEAD
     </div><div class="row"></div>
     <div class="col-md-2">
         @{Html.RenderAction("ListOfCat", "Company");}
         @{Html.RenderAction("ListOfTags", "Company"); }
     </div>
             }
+=======
+    </div>
+}
+<div class="row"></div>
+<div class="col-md-2">
+    @{Html.RenderAction("ListOfCat", "Company");}
+    @{Html.RenderAction("ListOfTags", "Company"); }
+</div>
+<h1>Companies</h1>
+<p>Listing of the companies in Esbjerg</p>
+>>>>>>> 9415bd34f15ba531bdf6079fbafa86e187c28e3c
 
 <div class="col-md-10">
     @foreach (var item in Model)
     {
 
+<<<<<<< HEAD
         <div class="container container-pad" id="property-listings" style="margin:20px; padding:10px; background-color:white;">
+=======
+
+<div class="col-md-10" style="background-color:dimgray">
+    @foreach (var item in Model)
+    {
+
+        <div class="container container-pad" id="property-listings" style="margin:5px; padding:5px; background-color:white;">
+>>>>>>> 9415bd34f15ba531bdf6079fbafa86e187c28e3c
 
             <div class="row">
                 <div class="col-sm-6">
@@ -48,11 +73,19 @@
                                 <a href="#" target="_parent"></a>
 
                                 <h4 class="media-heading">
+<<<<<<< HEAD
                                     <a href="@Url.Action("Details","Company",new { id = item.Id })" target="_parent">@Html.DisplayFor(modelItem => item.Name)<small class="pull-right">@Html.DisplayFor(modelItem => item.Address)</small></a>
+=======
+                                    <a href="#" target="_parent">@Html.DisplayFor(modelItem => item.Name)<small class="pull-right">@Html.DisplayFor(modelItem => item.Address)</small></a>
+>>>>>>> 9415bd34f15ba531bdf6079fbafa86e187c28e3c
                                 </h4>
 
                                 @*<-- WE WANT TO PUT THE TAGS IN HERE-->*@
                                 <ul class="list-inline mrg-0 btm-mrg-10 clr-535353">
+<<<<<<< HEAD
+=======
+                                    <li>TAG</li>
+>>>>>>> 9415bd34f15ba531bdf6079fbafa86e187c28e3c
 
                                     <li style="list-style: none">|</li>
 
@@ -60,7 +93,11 @@
 
                                     <li style="list-style: none">|</li>
 
+<<<<<<< HEAD
                                     <li> @Html.DisplayFor(modelItem => item.Category.Name) </li>
+=======
+                                    <li>   @Html.DisplayFor(modelItem => item.Category.Name) </li>
+>>>>>>> 9415bd34f15ba531bdf6079fbafa86e187c28e3c
                                 </ul>
 
                                 <p class=" fnt-smaller fnt-lighter fnt-arial">
@@ -78,4 +115,8 @@
             </div><!-- End row -->
         </div><!-- End container -->
     }
+<<<<<<< HEAD
 </div>
+=======
+</div>
+>>>>>>> 9415bd34f15ba531bdf6079fbafa86e187c28e3c

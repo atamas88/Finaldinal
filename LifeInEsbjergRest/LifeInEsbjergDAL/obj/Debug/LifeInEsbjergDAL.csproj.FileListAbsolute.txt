@@ -38,3 +38,8 @@ C:\Users\notandi\Documents\FinalLifeInEsbjerg\LifeInEsbjergRest\LifeInEsbjergDAL
 C:\Users\notandi\Documents\FinalLifeInEsbjerg\LifeInEsbjergRest\LifeInEsbjergDAL\obj\Debug\LifeInEsbjergDAL.csprojResolveAssemblyReference.cache
 C:\Users\notandi\Documents\FinalLifeInEsbjerg\LifeInEsbjergRest\LifeInEsbjergDAL\obj\Debug\LifeInEsbjergDAL.dll
 C:\Users\notandi\Documents\FinalLifeInEsbjerg\LifeInEsbjergRest\LifeInEsbjergDAL\obj\Debug\LifeInEsbjergDAL.pdb
+C:\Users\notandi\Documents\FinalLifeInEsbjerg\LifeInEsbjergRest\LifeInEsbjergDAL\bin\Debug\Antlr3.Runtime.dll
+C:\Users\notandi\Documents\FinalLifeInEsbjerg\LifeInEsbjergRest\LifeInEsbjergDAL\bin\Debug\Newtonsoft.Json.dll
+C:\Users\notandi\Documents\FinalLifeInEsbjerg\LifeInEsbjergRest\LifeInEsbjergDAL\bin\Debug\WebGrease.dll
+C:\Users\notandi\Documents\FinalLifeInEsbjerg\LifeInEsbjergRest\LifeInEsbjergDAL\bin\Debug\Antlr3.Runtime.pdb
+C:\Users\notandi\Documents\FinalLifeInEsbjerg\LifeInEsbjergRest\LifeInEsbjergDAL\bin\Debug\Newtonsoft.Json.xml
