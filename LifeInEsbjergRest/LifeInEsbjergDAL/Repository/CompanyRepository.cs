@@ -75,11 +75,19 @@ namespace LifeInEsbjergDAL.Repository
                     FirstOrDefault(x => x.Id == company.Id);
                 ctx.Entry(companyDB).CurrentValues.SetValues(company);
                 companyDB.Tags.Clear();
-                companyDB.Category = company.Category;
-                ctx.Entry(company.Category).State = EntityState.Unchanged;
+                if (companyDB.Category.Id != company.Category.Id)
+                {
+                    companyDB.Category = company.Category;
+                    ctx.Entry(company.Category).State = EntityState.Unchanged;
+                }
                 foreach (var item in company.Tags)
                 {
                     companyDB.Tags.Add(ctx.Tags.FirstOrDefault(x => x.Id == item.Id));
+                }
+                companyDB.Ratings.Clear();
+                foreach (var item in company.Ratings)
+                {
+                    companyDB.Ratings.Add(ctx.Ratings.FirstOrDefault(x => x.Id == item.Id));
                 }
                 //companyDB.CVR = company.CVR;
                 //companyDB.Name = company.Name;

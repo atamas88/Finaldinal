@@ -155,11 +155,18 @@ namespace LifeInEsbjerg.Controllers
                 Category = new SelectList(facade.GetCategoryGateway().ReadAll(), "Id", "Name"),
                 selectedCat = selectedCat,
                 Tags = new MultiSelectList(facade.GetTagGateway().ReadAll(), "Id", "Name"),
-                selectedTags = selectedTags
+                selectedTags = selectedTags,
+                nrRate = company.NrRate
+                
                 
             };
 
-            model.ratings = company.Ratings.ToList();
+            model.ratings = new List<Rating>();
+
+            foreach (var item in company.Ratings)
+            {
+                model.ratings.Add(item);
+            }
 
             if (company == null)
             {
@@ -169,7 +176,7 @@ namespace LifeInEsbjerg.Controllers
         }
 
         [HttpPost]
-        public ActionResult Edit([Bind(Include = "Company, Category, selectedCat, Tags, selectedTags, Ratings")] LifeInEsbjergViewModel model)
+        public ActionResult Edit([Bind(Include = "Company, Category, selectedCat, Tags, selectedTags, ratings, nrRate")] LifeInEsbjergViewModel model)
         {
 
             //ViewBag.Genres = new SelectList(db.Genres, "Id", "Name");
@@ -201,6 +208,9 @@ namespace LifeInEsbjerg.Controllers
                 //    newList.Add(new Tag() { Id = id });
                 //}
                 model.Company.Tags = newList;
+
+                model.Company.NrRate = model.nrRate;
+                model.Company.Ratings = model.ratings;
             }
             if (ModelState.IsValid)
             {
