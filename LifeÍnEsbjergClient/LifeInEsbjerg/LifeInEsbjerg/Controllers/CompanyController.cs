@@ -278,8 +278,12 @@ namespace LifeInEsbjerg.Controllers
             ratings.Add(rating);
 
             company.Ratings = ratings;
-            facade.GetCompanyGateway().Update(company);
+
             facade.GetRatingGateway().Add(rating);
+
+
+            facade.GetCompanyGateway().Update(company);
+            
             return RedirectToAction(actionName: "Details", controllerName:"Company", routeValues: new { Id = id});
         }
 

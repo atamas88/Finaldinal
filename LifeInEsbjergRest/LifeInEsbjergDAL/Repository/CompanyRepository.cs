@@ -85,10 +85,16 @@ namespace LifeInEsbjergDAL.Repository
                     companyDB.Tags.Add(ctx.Tags.FirstOrDefault(x => x.Id == item.Id));
                 }
                 companyDB.Ratings.Clear();
-                foreach (var item in company.Ratings)
+                //foreach (var item in company.Ratings)
+                //{
+                //    companyDB.Ratings.Add(ctx.Ratings.FirstOrDefault(x => x.Id == item.Id));
+                //}
+
+                for(int i = 0; i < company.Ratings.Count(); ++i)
                 {
-                    companyDB.Ratings.Add(ctx.Ratings.FirstOrDefault(x => x.Id == item.Id));
+                    companyDB.Ratings.Add(company.Ratings.ElementAt(i));
                 }
+
                 //companyDB.CVR = company.CVR;
                 //companyDB.Name = company.Name;
                 //companyDB.ImageUrl = company.ImageUrl;
@@ -117,6 +123,7 @@ namespace LifeInEsbjergDAL.Repository
                 //    ctx.Entry(item).State = EntityState.Unchanged;
                 //}
 
+                companyDB.NrRate = companyDB.Ratings.Count();
                 ctx.SaveChanges();
 
             }

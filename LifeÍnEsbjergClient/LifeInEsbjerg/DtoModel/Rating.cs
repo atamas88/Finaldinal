@@ -1,4 +1,6 @@
-﻿namespace DtoModel
+﻿using Newtonsoft.Json;
+
+namespace DtoModel
 {
     public class Rating
     {
@@ -12,7 +14,7 @@
         public int Price { get; set; }
 
         public double OverAll { get; set; }
-        
+        [JsonIgnore]
         public virtual Company Company { get; set; }
 
        
