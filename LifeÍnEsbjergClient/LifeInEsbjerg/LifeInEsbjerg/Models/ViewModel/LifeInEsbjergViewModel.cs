@@ -20,6 +20,8 @@ namespace LifeInEsbjerg.Models.ViewModel
         public List<int> selectedTags { get; set; }
 
         public List<Rating> ratings { get; set; }
+
+        public int nrRate { get; set; }
     }
 
 }
