@@ -32,7 +32,13 @@ namespace DtoModel
             public string Description { get; set; }
 
             public int NrRate { get; set; }
-            public double AvgOvr { get; set; }
+            public double AvgOvr
+            {
+                get
+                {
+                  
+                    return Math.Round(overall / 10, 2); 
+                } }
             //[ForeignKey("Category_Id")]
             public virtual Category Category { get; set; }
             //public int Category_Id { get; set; }

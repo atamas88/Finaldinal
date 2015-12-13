@@ -60,8 +60,8 @@ namespace LifeInEsbjerg.Controllers
                     companies = companies.Where(s => s.Category.Id.Equals(id));
                 }
             }
-         
-            Debug.WriteLine(companies);
+
+            companies = companies.OrderByDescending(c => c.AvgOvr);
             return View(companies);
 
         }

@@ -72,6 +72,7 @@
                                     <li> @Html.DisplayFor(modelItem => item.Category.Name) </li>
 
                                 </ul>
+                                
 
                                 <p class=" fnt-smaller fnt-lighter fnt-arial">
                                     @Html.DisplayFor(modelItem => item.Description)
@@ -80,6 +81,7 @@
                                     @Html.ActionLink("Details", "Details", new { id = item.Id }) |
                                     @Html.ActionLink("Delete", "Delete", new { id = item.Id })
                                 </span>
+                                <h4 style="text-align:right">Overall Rating: @item.AvgOvr</h4>
                             </div>
                         </div>
                     </div><!-- End Listing-->
