@@ -336,7 +336,7 @@ namespace LifeInEsbjergRest1.Controllers
             {
                 return GetErrorResult(result);
             }
-
+            UserManager.AddToRole(user.Id, model.Role);
             return Ok();
         }
 

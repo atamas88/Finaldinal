@@ -188,6 +188,7 @@
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Models\ViewModel\LifeInEsbjergViewModel.cs" />
     <Compile Include="Models\ViewModel\RatingViewModel.cs" />
+    <Compile Include="Models\ViewModel\ReviewViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -254,6 +255,8 @@
     <Content Include="Views\Company\ListOfTags.cshtml" />
     <Content Include="Views\Account\Registered.cshtml" />
     <Content Include="Views\Company\AddRating.cshtml" />
+    <Content Include="Views\Account\SelectRole.cshtml" />
+    <Content Include="Views\Company\AddReview.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

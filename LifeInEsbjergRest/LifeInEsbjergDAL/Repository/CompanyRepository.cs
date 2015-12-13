@@ -95,6 +95,12 @@ namespace LifeInEsbjergDAL.Repository
                     companyDB.Ratings.Add(company.Ratings.ElementAt(i));
                 }
 
+                companyDB.Reviews.Clear();
+                for(int i = 0; i < company.Reviews.Count(); ++i)
+                {
+                    companyDB.Reviews.Add(company.Reviews.ElementAt(i));
+                }
+
                 //companyDB.CVR = company.CVR;
                 //companyDB.Name = company.Name;
                 //companyDB.ImageUrl = company.ImageUrl;

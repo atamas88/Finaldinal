@@ -27,5 +27,10 @@ namespace LifeInEsbjergGateway
         {
             return new RatingGatewayService();
         }
+
+        public ReviewGatewayService GetReviewGateway()
+        {
+            return new ReviewGatewayService();
+        }
     }
 }

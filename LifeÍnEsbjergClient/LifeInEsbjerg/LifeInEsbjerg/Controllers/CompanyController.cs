@@ -287,5 +287,43 @@ namespace LifeInEsbjerg.Controllers
             return RedirectToAction(actionName: "Details", controllerName:"Company", routeValues: new { Id = id});
         }
 
+        [HttpGet]
+        public ActionResult AddReview(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Company company = facade.GetCompanyGateway().Find(id);
+            var model = new ReviewViewModel() { company = company };
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult AddReview(ReviewViewModel model)
+        {
+            Review review = new Review()
+            {
+                Title = model.review.Title,
+                Text = model.review.Text
+            };
+
+            int id = Convert.ToInt32(model.company.Id);
+            Company company = facade.GetCompanyGateway().Find(id);
+
+            List<Review> reviews = company.Reviews.ToList();
+
+            reviews.Add(review);
+
+            company.Reviews = reviews;
+
+            facade.GetReviewGateway().Add(review);
+
+
+            facade.GetCompanyGateway().Update(company);
+
+            return RedirectToAction(actionName: "Details", controllerName: "Company", routeValues: new { Id = id });
+        }
+
     }
 }

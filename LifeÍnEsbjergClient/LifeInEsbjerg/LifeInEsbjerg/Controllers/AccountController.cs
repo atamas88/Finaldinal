@@ -9,10 +9,11 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using LifeInEsbjerg.Models;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace LifeInEsbjerg.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class AccountController : Controller
     {
         private ApplicationSignInManager _signInManager;
@@ -137,7 +138,23 @@ namespace LifeInEsbjerg.Controllers
         //
         // GET: /Account/Register
         [AllowAnonymous]
-        public ActionResult Register()
+        public ActionResult Register(int? id)
+        {
+
+            var model = new RegisterViewModel() { };
+            if (id == 1)
+            {
+                model.Role = "User";
+            }
+            if(id == 2)
+            {
+                model.Role = " Company";
+            }
+            
+            return View(model);
+        }
+
+        public ActionResult SelectRole()
         {
             return View();
         }

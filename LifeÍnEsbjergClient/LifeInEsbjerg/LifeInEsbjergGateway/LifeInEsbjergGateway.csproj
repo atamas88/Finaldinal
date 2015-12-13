@@ -83,6 +83,7 @@
     <Compile Include="Services\CategoryGatewayService.cs" />
     <Compile Include="Services\CompanyGatewayService.cs" />
     <Compile Include="Services\RatingGatewayService.cs" />
+    <Compile Include="Services\ReviewGatewayService.cs" />
     <Compile Include="Services\TagGatewayService.cs" />
   </ItemGroup>
   <ItemGroup>
