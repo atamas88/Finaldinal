@@ -15,6 +15,7 @@ namespace LifeInEsbjergDAL
         private IRepository<Category> categoryRepo;
         private IRepository<Rating> ratingRepo;
         private IRepository<Tag> tagRepo;
+        private IRepository<Badge> badgeRepo;
 
         public IRepository<Company> GetCompanyRepository()
         {
@@ -48,6 +49,15 @@ namespace LifeInEsbjergDAL
                 tagRepo = new TagRepository();
             }
             return tagRepo;
+        }
+
+        public IRepository<Badge> GetBadgeRepository()
+        {
+            if (badgeRepo == null)
+            {
+                badgeRepo = new BadgeRepository();
+            }
+            return badgeRepo;
         }
 
     }

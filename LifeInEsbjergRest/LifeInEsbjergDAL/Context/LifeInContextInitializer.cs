@@ -53,6 +53,11 @@ namespace LifeInEsbjergDAL.Context
             Tag tag3 = context.Tags.Add(new Tag() { Id = 3, Name = "men hair cutting" });
             Tag tag4 = context.Tags.Add(new Tag() { Id = 4, Name = "good value" });
             Tag tag5 = context.Tags.Add(new Tag() { Id = 5, Name = "ship" });
+
+            Badge badge1 = context.Badges.Add(new Badge { Id = 1, Name = "Excellence in Customer Service", ImgPath = "http://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2014/11/1415490092badge.png" });
+            Badge badge2 = context.Badges.Add(new Badge { Id = 2, Name = "Excellence in Quality" , ImgPath = "http://thumbs.dreamstime.com/z/winner-badge-81762.jpg" });
+            Badge badge3 = context.Badges.Add(new Badge { Id = 3, Name = "Excellence in Price", ImgPath = "https://pixabay.com/static/uploads/photo/2013/07/12/16/01/badge-150755_640.png" });
+            Badge badge4 = context.Badges.Add(new Badge { Id = 4, Name = "Overall Excellence", ImgPath = "http://www.vectorgraphit.com/wp-content/uploads/2013/09/vintage_badge.jpg" });
             //Customer customer1 = context.Customers.Add(new Customer() { Id = 1, Name = "Kim Cormen", Email = "Google@google.tinfoil", Password = "1234abcd" });
 
             //AccountBindingModels.RegisterBindingModel user1 = new AccountBindingModels.RegisterBindingModel();
@@ -79,7 +84,8 @@ namespace LifeInEsbjergDAL.Context
                 Ratings = new List<Rating>() { rating1 },
                 Reviews = new List<Review>() { rev1 },
                 Tags = new List<Tag>() { tag1, tag2, tag3 },
-                NrRate = 1
+                NrRate = 1,
+                Badges = new List<Badge> { badge1}
 
             });
             companies.Add(new Company()
@@ -98,8 +104,8 @@ namespace LifeInEsbjergDAL.Context
                 Ratings = new List<Rating>() { rating2, rating3 },
                 Reviews = new List<Review>() { rev2 },
                 Tags = new List<Tag>() { tag4 },
-                NrRate = 2
-
+                NrRate = 2,
+                Badges = new List<Badge> { badge1 }
             });
 
             companies.Add(new Company()
@@ -118,8 +124,8 @@ namespace LifeInEsbjergDAL.Context
                 Ratings = new List<Rating>() { rating4, rating5, rating6 },
                 Reviews = new List<Review>() { rev3 },
                 Tags = new List<Tag>() { tag1, tag4, tag5 },
-                NrRate = 3
-
+                NrRate = 3,
+                Badges = new List<Badge> { }
             });
 
             companies.Add(new Company()
@@ -138,8 +144,8 @@ namespace LifeInEsbjergDAL.Context
                 Ratings = new List<Rating>() { rating7, rating8 , rating9 },
                 Reviews = new List<Review>() { rev4 },
                 Tags = new List<Tag>() { tag4, tag5, tag3 },
-                NrRate = 3
-
+                NrRate = 3,
+                Badges = new List<Badge> {}
             });
 
             companies.Add(new Company()
@@ -158,8 +164,8 @@ namespace LifeInEsbjergDAL.Context
                 Ratings = new List<Rating>() { rating10 },
                 Reviews = new List<Review>() { rev5 },
                 Tags = new List<Tag>() { tag5 },
-                NrRate = 1
-
+                NrRate = 1,
+                Badges = new List<Badge> {}
             });
 
 
@@ -179,8 +185,8 @@ namespace LifeInEsbjergDAL.Context
                 Ratings = new List<Rating>() { rating11, rating12 },
                 Reviews = new List<Review>() { rev6 },
                 Tags = new List<Tag>() { tag3,tag4 },
-                NrRate = 2
-
+                NrRate = 2,
+                Badges = new List<Badge> {  }
             });
 
             foreach (Company com in companies)

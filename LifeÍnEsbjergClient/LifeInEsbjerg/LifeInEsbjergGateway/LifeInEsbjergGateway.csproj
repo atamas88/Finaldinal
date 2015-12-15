@@ -80,6 +80,7 @@
     <Compile Include="GenericService\WebApiService.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\BadgeGatewayService.cs" />
     <Compile Include="Services\CategoryGatewayService.cs" />
     <Compile Include="Services\CompanyGatewayService.cs" />
     <Compile Include="Services\RatingGatewayService.cs" />

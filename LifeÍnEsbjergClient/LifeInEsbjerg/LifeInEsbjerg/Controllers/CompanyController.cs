@@ -117,8 +117,11 @@ namespace LifeInEsbjerg.Controllers
             model.Company.Ratings = new List<Rating>();
             model.Company.NrRate = 0;
             facade.GetCompanyGateway().Add(model.Company);
+            
             return RedirectToAction("Index", "Company");
         }
+
+       
 
         public ActionResult Delete(int? id)
         {
@@ -281,10 +284,57 @@ namespace LifeInEsbjerg.Controllers
 
             facade.GetRatingGateway().Add(rating);
 
+            //if (model.company.NrRate >= 2)
+            //{
+                if (company.avgCust > 80)
+                {
+                    company = AddBadge(company, 1);
+                }
+                if (company.avgQua > 80)
+                {
+                     company = AddBadge(company, 2);
+                }
+                if (company.avgPrice > 80)
+                {
+                     company = AddBadge(company, 3);
+                }
+                if (company.overall > 80)
+                {
+                     company = AddBadge(company, 4);
+                }
+            //}
 
             facade.GetCompanyGateway().Update(company);
+
             
+
             return RedirectToAction(actionName: "Details", controllerName:"Company", routeValues: new { Id = id});
+        }
+
+        public Company AddBadge(Company company, int badgeId)
+        {
+     
+            bool already = false;
+            for (int i = 0; i < company.Badges.Count(); ++i)
+            {
+                if (company.Badges.ElementAt(i).Id == badgeId)
+                {
+                    already = true;
+                }
+            }
+            
+            if (!already)
+            {
+                Badge badge = facade.GetBadgeGateway().Find(badgeId);
+                List<Badge> badges = company.Badges.ToList();
+
+                badges.Add(badge);
+
+                company.Badges = badges;
+            }
+
+            return company;
+
         }
 
         [HttpGet]
