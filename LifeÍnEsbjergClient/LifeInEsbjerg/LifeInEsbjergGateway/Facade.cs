@@ -32,5 +32,10 @@ namespace LifeInEsbjergGateway
         {
             return new ReviewGatewayService();
         }
+
+        public BadgeGatewayService GetBadgeGateway()
+        {
+            return new BadgeGatewayService();
+        }
     }
 }
