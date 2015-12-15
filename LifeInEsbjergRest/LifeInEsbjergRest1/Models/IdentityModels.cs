@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
+using System.Data.Entity;
 
 namespace LifeInEsbjergRest1.Models
 {
@@ -23,11 +24,37 @@ namespace LifeInEsbjergRest1.Models
         public ApplicationDbContext()
             : base("LifeInEsbjergDB", false)
         {
+            Database.SetInitializer(new ApplicationContextInitializer());
         }
-        
+
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
+        }
+    }
+
+    public class ApplicationContextInitializer : DropCreateDatabaseAlways<ApplicationDbContext>
+    {
+
+        protected override void Seed(ApplicationDbContext context)
+        {
+            var roleStore = new RoleStore<IdentityRole>(context);
+            var roleManager = new RoleManager<IdentityRole>(roleStore);
+
+            roleManager.Create(new IdentityRole { Name = "User" });
+            roleManager.Create(new IdentityRole { Name = "Company" });
+
+            var userStore = new UserStore<ApplicationUser>(context);
+            var userManager = new UserManager<ApplicationUser>(userStore);
+
+            var user = new ApplicationUser { UserName = "companyuser"};
+            userManager.Create(user, "Pass123.");
+            userManager.AddToRole(user.Id, "Company");
+
+            var user1 = new ApplicationUser { UserName = "user" };
+            userManager.Create(user1, "Pass123.");
+            userManager.AddToRole(user1.Id, "User");
+
         }
     }
 }
