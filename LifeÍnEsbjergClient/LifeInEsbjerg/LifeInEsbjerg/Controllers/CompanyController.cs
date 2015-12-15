@@ -66,6 +66,13 @@ namespace LifeInEsbjerg.Controllers
 
         }
 
+        public ActionResult GetNewestCompanies()
+        {
+            IEnumerable<Company> companies = facade.GetCompanyGateway().ReadAll();
+            companies = companies.OrderByDescending(c => c.AvgOvr).Take(6);
+            return PartialView(companies);
+        }
+
         public ActionResult ListOfCat()
         {
             IEnumerable<Category> categories = facade.GetCategoryGateway().ReadAll();

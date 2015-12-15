@@ -269,6 +269,7 @@
     <Content Include="Views\Company\AddRating.cshtml" />
     <Content Include="Views\Account\SelectRole.cshtml" />
     <Content Include="Views\Company\AddReview.cshtml" />
+    <Content Include="Views\Company\GetNewestCompanies.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
