@@ -22,6 +22,7 @@ namespace LifeInEsbjergDAL.Context
         {
             //modelBuilder.Entity<Rating>().HasRequired(s => s.Company).WithMany(r => r.Ratings).HasForeignKey(c => c.Company_Id);
             modelBuilder.Entity<Company>().HasMany(c => c.Tags).WithMany();
+            modelBuilder.Entity<Company>().HasMany(c => c.Badges).WithMany();
         }
 
         public DbSet<Company> Companies { get; set; }
@@ -30,6 +31,8 @@ namespace LifeInEsbjergDAL.Context
         public DbSet<Review> Reviews { get; set; }
 
         public DbSet<Tag> Tags { get; set; }
+
+        public DbSet<Badge> Badges { get; set; }
         //public DbSet<AccountBindingModels.RegisterBindingModel> AccModels { get; set; }
     }
 }

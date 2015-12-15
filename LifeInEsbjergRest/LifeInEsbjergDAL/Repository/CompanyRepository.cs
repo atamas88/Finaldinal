@@ -20,7 +20,7 @@ namespace LifeInEsbjergDAL.Repository
             {
 
                 //ctx.Companies.Include("Rating")
-                return ctx.Companies.Include("Category").Include(c => c.Ratings).Include("Reviews").Include("Tags").ToList();
+                return ctx.Companies.Include("Category").Include(c => c.Ratings).Include("Reviews").Include("Tags").Include("Badges").ToList();
 
             }
         }
@@ -72,6 +72,7 @@ namespace LifeInEsbjergDAL.Repository
                     Include("Tags").
                     Include("Ratings").
                     Include("Reviews").
+                    Include("Badges").
                     FirstOrDefault(x => x.Id == company.Id);
                 ctx.Entry(companyDB).CurrentValues.SetValues(company);
                 companyDB.Tags.Clear();
@@ -99,6 +100,12 @@ namespace LifeInEsbjergDAL.Repository
                 for(int i = 0; i < company.Reviews.Count(); ++i)
                 {
                     companyDB.Reviews.Add(company.Reviews.ElementAt(i));
+                }
+
+                companyDB.Badges.Clear();
+                foreach (var item in company.Badges)
+                {
+                    companyDB.Badges.Add(ctx.Badges.FirstOrDefault(x => x.Id == item.Id));
                 }
 
                 //companyDB.CVR = company.CVR;
