@@ -3,92 +3,59 @@
 @{
     ViewBag.Title = "Company";
 }
+<div class="container cont">
+    <div class="row">
+        <h2>Companies</h2>
 
-<h2>Companies</h2>
+        @using (Html.BeginForm())
+        {
+         
+        <div class="row"></div>
+            <div class="col-md-2 well" style="background-color:white; padding:10px;">
+                @{Html.RenderAction("ListOfCat", "Company");}
+                @{Html.RenderAction("ListOfTags", "Company"); }
+            </div>
+                    }
 
-@using (Html.BeginForm())
-{
-    @*<p>
+        <div class="col-md-10">
+            @foreach (var item in Model)
+            {
 
-<<<<<<< HEAD
-        <input type="submit" value="Search" />
-=======
-            <input type="submit" value="Search" />
->>>>>>> 9415bd34f15ba531bdf6079fbafa86e187c28e3c
-        </p>*@
-    <div style="width:200px;">
-        <div class="input-group">
-            @Html.TextBox("SearchString")
-            <span class="input-group-btn">
-                <button class="btn btn-default" type="submit">Go!</button>
-            </span>
-        </div><!-- /input-group -->
-
-    </div><div class="row"></div>
-    <div class="col-md-2">
-        @{Html.RenderAction("ListOfCat", "Company");}
-        @{Html.RenderAction("ListOfTags", "Company"); }
-    </div>
-            }
-
-<div class="col-md-10">
-    @foreach (var item in Model)
-    {
-
-
-        <div class="container container-pad" id="property-listings" style="margin:20px; padding:10px; background-color:white;">
-
-
-            <div class="row">
-                <div class="col-sm-6">
-
-                    <!-- Begin Listing: 609 W GRAVERS LN-->
-                    <div class="brdr bgc-fff pad-10 box-shad btm-mrg-20">
-                        <div class="media">
-                            <a class="pull-left" href="#" target="_parent">
-                                <img alt="image" class="img-responsive" src="@item.ImageUrl" width="100" />
-                            </a>
-
-                            <div class="clearfix visible-sm"></div>
-
-                            <div class="media-body fnt-smaller">
-                                <a href="#" target="_parent"></a>
-
-                                <h4 class="media-heading">
-                                    <a href="@Url.Action("Details","Company",new { id = item.Id })" target="_parent">@Html.DisplayFor(modelItem => item.Name)<small class="pull-right">@Html.DisplayFor(modelItem => item.Address)</small></a>
-
-                                </h4>
-
-                                @*<-- WE WANT TO PUT THE TAGS IN HERE-->*@
-                                <ul class="list-inline mrg-0 btm-mrg-10 clr-535353">
-
-
-                                    <li style="list-style: none">|</li>
-
-                                    <li>Open from: @Html.DisplayFor(modelItem => item.OpenHours)</li>
-
-                                    <li style="list-style: none">|</li>
-
-                                    <li> @Html.DisplayFor(modelItem => item.Category.Name) </li>
-
-                                </ul>
-                                
-
-                                <p class=" fnt-smaller fnt-lighter fnt-arial">
-                                    @Html.DisplayFor(modelItem => item.Description)
-                                </p><span class="fnt-smaller fnt-lighter fnt-arial">
-                                    @Html.ActionLink("Update", "Edit", new { id = item.Id }) |
-                                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-                                </span>
-                                <h4 style="text-align:right">Overall Rating: @item.AvgOvr</h4>
-                            </div>
+                <div class="well" style="background-color:white;">
+                    <div class="media">
+                        <a class="pull-left" href="#">
+                            <img alt="image" class="img-responsive" src="@item.ImageUrl" width="100" />
+                        </a>
+                        <div class="media-body">
+                            <h4 class="media-heading">@item.Name</h4>
+                            <p class="text-right">@Html.ActionLink("Details", "Details", new { id = item.Id })</p>
+                            <p>
+                                @item.Description
+                            </p>
+                            <ul class="list-inline list-unstyled">
+                                <li>Open <strong>M-S : @Html.DisplayFor(modelItem => item.OpenHours)</strong></li>
+                                <li>|</li>
+                                 Nr of rates: @item.NrRate
+                                <li>|</li>
+                                <li>
+                                    <div class="progress" style="width:200px; margin-bottom:-6px;">
+                                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow=@item.overall aria-valuemin="0" aria-valuemax="100"  style="width: @item.overall.ToString(".")%">
+                                            Overal Rating @(item.AvgOvr)
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>|</li>
+                                <li>
+                                     @Html.DisplayFor(modelItem => item.Category.Name)
+                                </li>
+                            </ul>
                         </div>
-                    </div><!-- End Listing-->
+                    </div>
+                </div>   
+               
+            }
+        </div>
 
-                </div><!-- End Col -->
-            </div><!-- End row -->
-        </div><!-- End container -->
-    }
-</div>
+        </div>
+    </div>
 
