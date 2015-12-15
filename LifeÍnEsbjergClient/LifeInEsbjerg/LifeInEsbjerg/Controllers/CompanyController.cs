@@ -309,6 +309,23 @@ namespace LifeInEsbjerg.Controllers
                 {
                      company = AddBadge(company, 4);
                 }
+            if (company.avgCust < 80)
+            {
+                company = RemoveBadge(company, 1);
+            }
+            if (company.avgQua < 80)
+            {
+                company = RemoveBadge(company, 2);
+            }
+            if (company.avgPrice < 80)
+            {
+                company = RemoveBadge(company, 3);
+            }
+            if (company.overall < 80)
+            {
+                company = RemoveBadge(company, 4);
+            }
+
             //}
 
             facade.GetCompanyGateway().Update(company);
@@ -342,6 +359,30 @@ namespace LifeInEsbjerg.Controllers
 
             return company;
 
+        }
+
+        public Company RemoveBadge(Company company, int badgeId)
+        {
+            bool contains = false;
+            for(int i = 0; i < company.Badges.Count(); ++i)
+            {
+                if(company.Badges.ElementAt(i).Id == badgeId)
+                {
+                    contains = true;
+                }
+            }
+            if (contains)
+            {
+                //Badge badge = facade.GetBadgeGateway().Find(badgeId);
+                List<Badge> badges = company.Badges.ToList();
+
+               
+                badges.Remove(badges.FirstOrDefault(x => x.Id == badgeId));
+                company.Badges = badges;
+            }
+
+
+            return company;
         }
 
         [HttpGet]
