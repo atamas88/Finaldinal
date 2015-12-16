@@ -8,10 +8,13 @@ namespace LifeInEsbjerg.Models
 {
     public class SignInModel
     {
-        [Required, Display(Name = "Email address")]
+        [Required] 
+        [Display(Name = "Email address")]
+        [EmailAddress]
         public string Email { get; set; }
 
         [Required]
+        [DataType(DataType.Password)]
         public string Password { get; set; }
 
         [Display(Name = "Remember me?")]

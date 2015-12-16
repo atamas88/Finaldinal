@@ -1,14 +1,14 @@
-﻿using Microsoft.Owin;
-using Owin;
+﻿//using Microsoft.Owin;
+//using Owin;
 
-[assembly: OwinStartupAttribute(typeof(LifeInEsbjerg.Startup))]
-namespace LifeInEsbjerg
-{
-    public partial class Startup
-    {
-        public void Configuration(IAppBuilder app)
-        {
-            ConfigureAuth(app);
-        }
-    }
-}
+//[assembly: OwinStartupAttribute(typeof(LifeInEsbjerg.Startup))]
+//namespace LifeInEsbjerg
+//{
+//    public partial class Startup
+//    {
+//        public void Configuration(IAppBuilder app)
+//        {
+//            ConfigureAuth(app);
+//        }
+//    }
+//}

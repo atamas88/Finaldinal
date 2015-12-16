@@ -1,4 +1,4 @@
-﻿@using Microsoft.AspNet.Identity
+﻿@*@using Microsoft.AspNet.Identity
 @if (Request.IsAuthenticated)
 {
     using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
@@ -11,12 +11,19 @@
         </li>
         <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
     </ul>
+    }*@
+<ul class="nav navbar-nav navbar-right">
+    @if (User.Identity.IsAuthenticated)
+    {
+        <li>@Html.ActionLink("Sign Out", "SignOut", "Account")</li>
     }
-}
-else
-{
-    <ul class="nav navbar-nav navbar-right">
-        <li>@Html.ActionLink("Register", "SelectRole", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
-        <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
-    </ul>
-}
+    else
+    {
+        <li>@Html.ActionLink("Register", "SelectRole", "Account")</li>
+        <li>@Html.ActionLink("Log in", "Login", "Account") </li>
+
+    }
+</ul>
+
+
+

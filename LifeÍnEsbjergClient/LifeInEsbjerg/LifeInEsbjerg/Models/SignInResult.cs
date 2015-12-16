@@ -26,5 +26,7 @@ namespace LifeInEsbjerg.Models
 
         [JsonProperty(".expires")]
         public DateTimeOffset Expires { get; set; }
+
+
     }
 }

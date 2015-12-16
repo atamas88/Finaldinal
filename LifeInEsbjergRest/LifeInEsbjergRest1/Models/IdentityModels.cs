@@ -25,6 +25,7 @@ namespace LifeInEsbjergRest1.Models
             : base("LifeInEsbjergDB", false)
         {
             Database.SetInitializer(new ApplicationContextInitializer());
+            
         }
 
         public static ApplicationDbContext Create()
@@ -47,11 +48,11 @@ namespace LifeInEsbjergRest1.Models
             var userStore = new UserStore<ApplicationUser>(context);
             var userManager = new UserManager<ApplicationUser>(userStore);
 
-            var user = new ApplicationUser { UserName = "companyuser"};
+            var user = new ApplicationUser { UserName = "Company@user.is" , Email ="Company@user.is"};
             userManager.Create(user, "Pass123.");
             userManager.AddToRole(user.Id, "Company");
 
-            var user1 = new ApplicationUser { UserName = "user" };
+            var user1 = new ApplicationUser { UserName = "user@user.is", Email ="user@user.is" };
             userManager.Create(user1, "Pass123.");
             userManager.AddToRole(user1.Id, "User");
 
