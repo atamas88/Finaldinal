@@ -372,4 +372,32 @@ footer{
     -webkit-border-radius:0 !important;
 }
 
-
+/*test search*/
+.searchbox {
+    height:34px;
+-webkit-border-top-left-radius: 5px;
+-webkit-border-bottom-left-radius: 5px;
+-moz-border-radius-topleft: 5px;
+-moz-border-radius-bottomleft: 5px;
+border-top-left-radius: 5px;
+border-bottom-left-radius: 5px;
+border:1px solid #cccccc;
+}
+.btnCategories{
+    border:none;
+    text-align:center;
+    vertical-align:middle;
+    border-bottom:1px solid #ccc;
+    background-color:white;
+    height:40px;
+}
+.btnCategories:hover{
+    text-align:center;
+    vertical-align:middle;
+    border:none;
+    border-bottom:1px solid #ccc;
+    /*background-color: rgb(119, 119, 119);*/
+    background-color:#428bca;
+    color:white;
+    height:40px;
+}

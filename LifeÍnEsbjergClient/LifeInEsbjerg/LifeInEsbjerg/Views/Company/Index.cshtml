@@ -5,7 +5,8 @@
 }
 <div class="container cont">
     <div class="row">
-        <h2>Companies</h2>
+        <h1>Companies</h1>
+        <div class="row" style="background-color:#878787; height:1px; margin-bottom:20px;" ></div>
 
         @using (Html.BeginForm())
         {
@@ -32,6 +33,13 @@
                             <p>
                                 @item.Description
                             </p>
+                            <div class="col-md-12 " style="margin-bottom:-20px; text-align:right;">
+                                                      
+                                <strong> Tel: </strong><tel>@item.Tel</tel>  |                               
+                                <strong>Address:</strong> @item.Address
+
+                            </div>
+                            <hr />
                             <ul class="list-inline list-unstyled">
                                 <li>Open <strong>M-S : @Html.DisplayFor(modelItem => item.OpenHours)</strong></li>
                                 <li>|</li>

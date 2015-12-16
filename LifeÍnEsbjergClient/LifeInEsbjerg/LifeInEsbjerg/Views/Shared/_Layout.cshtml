@@ -11,22 +11,33 @@
 </head>
 <body>
 
-    <div class="container">
-        @*<div class="row" style="margin-top:55px;">
-            <div class="col-md-3"><span class="siteTitle" style="font-size:30px; margin-left:5px;">Life In Esbjerg</span></div>
-            <div class="col-md-offset-9">
-
+    <div class="container">       
+        <div class="row" >          
+            <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="background-color:#242424; height:85px;">
+                <div class="row" style="height:5px;"></div>
+                <div class="container">
                 <div class="row">
-                    <div class="col-md-9 col-md-offset-3">
-                       
+                    <div class="col-md-10">
+                        <span class="siteTitle" style="font-size:26px; margin-right:10px;">Life In Esbjerg</span>
+                    </div>
+                    <div class="col-md-2">
+                        @using (Html.BeginForm("Index", "Company", FormMethod.Get))
+                        {
+
+                            <div style="width:220px; padding-right:100px;">
+                                <div class="input-group">
+                                    @Html.TextBox("SearchString", null, new {@class = "searchbox" })
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" type="button">Go!</button>
+                                    </span>
+                                </div><!-- /input-group -->
+                            </div><!-- /.col-lg-6 -->
+
+
+                        }
                     </div>
                 </div>
-
-            </div>
-        </div>*@
-        <div class="row" >
-            <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="background-color:#545454; ">
-                <div class="container">
+               
                     <!-- Brand and toggle get grouped for better mobile display -->
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="‪#‎bs‬-example-navbar-collapse-1">
@@ -41,46 +52,29 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav">
-                            <li><span class="siteTitle" style="font-size:26px; margin-right:10px; height:40px;">Life In Esbjerg</span></li>
                             <li class="">@Html.ActionLink("Home", "Index", "Home")</li>
-                            <li> @Html.ActionLink("Company ", "index", "Company")</li>                           
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Info <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#"> @Html.ActionLink("About", "About", "Home")</a>
-                                    <li><a href="#"> @Html.ActionLink("Contact", "Contact", "Home")</a></li>
-                                    <li><a href="#">Something else here</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="#">Separated link</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="#">One more separated link</a></li>
-                                </ul>
-                            </li>
+                            <li> @Html.ActionLink("Company ", "index", "Company")</li>
+                            <li> @Html.ActionLink("About Us", "About", "Home")</li>
+                            <li> @Html.ActionLink("Contact", "Contact", "Home")</li>                          
                         </ul>
 
-                       
                         <ul class="nav navbar-nav navbar-right">
                             <li style="margin-top:10px; margin-bottom:-10px;">
-                                <form action="" class="search-form">
-                                    <div class="form-group has-feedback">
-                                        <label for="search" class="sr-only">Search</label>
-                                        <input type="text" class="form-control" name="search" id="search" placeholder="search">
-                                        <span class="glyphicon glyphicon-search form-control-feedback" style="margin-left:-30px!important;"></span>
-                                    </div>
-                                </form>
+                             
                             </li>
-                            @Html.Partial("_LoginPartial")
+                            <li>@Html.Partial("_LoginPartial")</li>
+                           
                         </ul>
-
-
-
+                    
                     </div><!-- /.navbar-collapse -->
+               
+
                 </div><!-- /.container-fluid -->
             </nav>
         </div>
     </div>
-   @*<div class="row" style="height:70px;"></div>*@
-   
+ 
+    <div class="row" style="height:55px;"></div>
     <div class="@*container body-content*@ ">
         @RenderBody()
         <hr />
