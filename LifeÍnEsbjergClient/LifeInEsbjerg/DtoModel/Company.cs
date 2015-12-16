@@ -113,6 +113,7 @@ namespace DtoModel
             {
                 if (NrRate != 0)
                 {
+                    
                     return (avgCust + avgPrice + avgQua) / 3;
                 }
                 return 0;

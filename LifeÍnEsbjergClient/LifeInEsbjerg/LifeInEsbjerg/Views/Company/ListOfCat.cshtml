@@ -4,9 +4,8 @@
 {
     
     <ul class="nav nav-pills nav-stacked">
-        <li role="presentation">
-    
-            <button type="button" onclick="location.href='@Url.Action("Index", "Company", new { id = item.Id })'" style="width:150px;" class="btn btn-default">@Html.DisplayFor(modelItem => item.Name)</button>
+        <li role="presentation"  style="text-align:center;">    
+            <button type="button" onclick="location.href='@Url.Action("Index", "Company", new { id = item.Id })'" style="width:150px;" class="btnCategories">@Html.DisplayFor(modelItem => item.Name)</button>
         </li>
     </ul>
 

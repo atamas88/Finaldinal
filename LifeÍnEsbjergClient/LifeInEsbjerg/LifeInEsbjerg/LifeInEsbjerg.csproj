@@ -204,6 +204,18 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\117H%281200x400%29.jpg" />
+    <Content Include="Images\117H.jpg" />
+    <Content Include="Images\30%281200x400%29.jpg" />
+    <Content Include="Images\30.jpg" />
+    <Content Include="Images\35H%281200x400%29.jpg" />
+    <Content Include="Images\35H.jpg" />
+    <Content Include="Images\58%281200x400%29.jpg" />
+    <Content Include="Images\58.jpg" />
+    <Content Include="Images\62H%281200x400%29.jpg" />
+    <Content Include="Images\62H.jpg" />
+    <Content Include="Images\85H%281200x400%29.jpg" />
+    <Content Include="Images\85H.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -262,6 +274,8 @@
     <Content Include="Views\Account\SelectRole.cshtml" />
     <Content Include="Views\Company\AddReview.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Company\GetNewestCompanies.cshtml" />
+
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

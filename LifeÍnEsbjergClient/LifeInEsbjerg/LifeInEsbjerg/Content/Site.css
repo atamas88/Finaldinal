@@ -1,4 +1,5 @@
 ﻿@import url(https://fonts.googleapis.com/css?family=Ropa+Sans);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300);
 body {
  padding:0!important;
  background-color:#ebe7df;
@@ -28,7 +29,11 @@ body {
  border-bottom-right-radius: 4px;
  border-bottom-left-radius: 4px;
  }
-
+ .siteTitle{
+     font-family: "Open Sans";
+     color:beige;
+     padding-bottom:5px;
+ }
 .list-group-submenu {
 
  margin-left: 20px;
@@ -267,7 +272,7 @@ footer{
 .search-form .form-group span.form-control-feedback {
   position: absolute;
   top: -1px;
-  right: -2px;
+  right: -1px;
   z-index: 2;
   display: block;
   width: 34px;
@@ -282,7 +287,9 @@ footer{
     position:absolute;
     right:130px;
     top:28px;
-}/* USER PROFILE PAGE */
+
+}
+/* USER PROFILE PAGE */
  .card {
     margin-top: 40px;
     padding: 50px;
@@ -365,4 +372,32 @@ footer{
     -webkit-border-radius:0 !important;
 }
 
-
+/*test search*/
+.searchbox {
+    height:34px;
+-webkit-border-top-left-radius: 5px;
+-webkit-border-bottom-left-radius: 5px;
+-moz-border-radius-topleft: 5px;
+-moz-border-radius-bottomleft: 5px;
+border-top-left-radius: 5px;
+border-bottom-left-radius: 5px;
+border:1px solid #cccccc;
+}
+.btnCategories{
+    border:none;
+    text-align:center;
+    vertical-align:middle;
+    border-bottom:1px solid #ccc;
+    background-color:white;
+    height:40px;
+}
+.btnCategories:hover{
+    text-align:center;
+    vertical-align:middle;
+    border:none;
+    border-bottom:1px solid #ccc;
+    /*background-color: rgb(119, 119, 119);*/
+    background-color:#428bca;
+    color:white;
+    height:40px;
+}
