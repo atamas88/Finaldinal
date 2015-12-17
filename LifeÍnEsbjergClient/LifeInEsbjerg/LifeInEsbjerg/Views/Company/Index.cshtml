@@ -29,13 +29,13 @@
                         </a>
                         <div class="media-body">
                             <h4 class="media-heading"><a href="@Url.Action(actionName:"Details", controllerName:"Company", routeValues:new { id = item.Id })">@item.Name</a></h4>
-                            @*<p class="text-right">@Html.ActionLink("Details", "Details", new { id = item.Id })</p>*@
+                            <p class="text-right">@Html.ActionLink("Details", "Details", new { id = item.Id })</p>
 
                             @if (item.Badges != null)
                             {
                                 for (int i = 0; i < item.Badges.Count(); ++i)
                                 {
-                                    <img src="@item.Badges.ElementAt(i).ImgPath" width="70" align="right">
+                                    <img class="img-responsive"  src="@item.Badges.ElementAt(i).ImgPath" width="20" align="right">
                                 }
                             }
 
