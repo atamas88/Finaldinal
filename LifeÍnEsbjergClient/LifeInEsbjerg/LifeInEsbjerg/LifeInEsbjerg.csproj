@@ -211,6 +211,7 @@
     <Content Include="Images\62H.jpg" />
     <Content Include="Images\85H%281200x400%29.jpg" />
     <Content Include="Images\85H.jpg" />
+    <Content Include="Images\LifeInEsbjergLogo.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
