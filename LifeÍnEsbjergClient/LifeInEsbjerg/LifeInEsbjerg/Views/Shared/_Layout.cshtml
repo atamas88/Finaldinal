@@ -27,6 +27,24 @@
                                 <li> @Html.ActionLink("Company ", "index", "Company")</li>
                                 <li> @Html.ActionLink("About Us", "About", "Home")</li>
                                 <li> @Html.ActionLink("Contact", "Contact", "Home")</li>
+                                @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+                                {
+                                    <li role="presentation" class="dropdown">
+                                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                            Administration <span class="caret"></span>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li> @Html.ActionLink("Create Company ", "Create", "Company")</li>
+                                            <li> @Html.ActionLink("Edit Company ", "Edit", "Company")</li>
+                                            <li>Ratings</li>
+                                            <li role="separator" class="divider"></li>
+                                            <li> @Html.ActionLink("Add Ratings ", "AddRating", "Company")</li>
+                                            <li>Review</li>
+                                            <li role="separator" class="divider"></li>
+                                            <li> @Html.ActionLink("Add Review ", "AddReview", "Company")</li>
+                                        </ul>
+                                    </li>
+                                }
                             </ul>
 
                             <ul class="nav navbar-nav navbar-right">

@@ -30,6 +30,11 @@
                         <div class="media-body">
                             <h4 class="media-heading">@item.Name</h4>
                             <p class="text-right">@Html.ActionLink("Details", "Details", new { id = item.Id })</p>
+                            @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+                            {
+                                <p class="text-right">@Html.ActionLink("Edit", "Edit", new { id = item.Id })</p>
+                                <p class="text-right">@Html.ActionLink("Delete", "Delete", new { id = item.Id })</p>
+                            }
                             <p>
                                 @item.Description
                             </p>

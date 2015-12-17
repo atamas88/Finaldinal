@@ -3,177 +3,182 @@
 @{
     ViewBag.Title = "Details";
 }
+<div class="container cont">
+    <div class="row">
 
+        <div class="col-lg-12 col-sm-6">
+            <div class="card hovercard">
+                <div class="card-background">
+                    <img class="card-bkimg" alt="" src="~/Images/62H.jpg" />
+                    <!-- @Html.DisplayFor(modelItem => modelItem.Name) -->
+                           </div>
+        <div class="useravata
+                </div>
+                <div class="useravatar">
+                    <img alt="" src="@Html.DisplayFor(modelItem => modelItem.ImageUrl)">
+                </div>
+                <div class="card-info">
+                    <span class="card-title">@Html.DisplayFor(modelItem => modelItem.Name)</span>
 
-<div class="col-lg-12 col-sm-6">
-    <div class="card hovercard">
-        <div class="card-background">
-            <img class="card-bkimg" alt="" src="~/Images/62H.jpg" />
-            <!-- @Html.DisplayFor(modelItem => modelItem.Name) -->
-        </div>
-        <div class="useravatar">
-            <img alt="" src="@Html.DisplayFor(modelItem => modelItem.ImageUrl)">
-        </div>
-        <div class="card-info">
-            <span class="card-title">@Html.DisplayFor(modelItem => modelItem.Name)</span>
-
-        </div>
-    </div>
-
-    <div class="btn-pref btn-group btn-group-justified btn-group-lg" role="group" aria-label="...">
-        <div class="btn-group" role="group">
-            <a href="#tab1" data-toggle="tab" id=" stars" class="btn btn-primary " role="button"> <div class="hidden-xs">About Us</div></a>
-            @*<button type="button" id="stars" class="btn btn-primary" href="#tab1" data-toggle="tab">*@
-            <span aria-hidden="true"></span>
-            @*  <div class="hidden-xs">About Us</div>
-                </button>*@
-        </div>
-        <div class="btn-group" role="group">
-            <a href="#tab2" data-toggle="tab" id=" favorites" class="btn btn-default " role="button"><div class="hidden-xs"> Contact Info</div></a>
-
-            @*<button type="button" id="favorites" class="btn btn-default" href="#tab2" data-toggle="tab">*@
-            <span aria-hidden="true"></span>
-            @* <div class="hidden-xs">Contact Us</div>
-                </button>*@
-        </div>
-        <div class="btn-group" role="group">
-            <a href="#tab3" data-toggle="tab" id="following " class="btn btn-default " role="button"<div class="hidden-xs"> Rating and reviews</div></a>
-
-            @*<button type="button" id="following" class="btn btn-default" href="#tab3" data-toggle="tab">*@
-            <span aria-hidden="true"></span>
-            @*   <div class="hidden-xs">Rating And Reviews</div>
-                </button>*@
-        </div>
-    </div>
-
-
-    <div class="well">
-        <div class="tab-content">
-            <div class="tab-pane fade in active" id="tab1">
-                <table class="table">
-                    <tr>
-                        <td>
-                            @if (Model.Badges != null)
-                            {
-                                for (int i = 0; i < Model.Badges.Count(); ++i)
-                                {
-                                    <img src="@Model.Badges.ElementAt(i).ImgPath" width="100" height="100" align="right">
-                                }
-                            }
-                            <h3>
-                                @Html.DisplayFor(modelItem => modelItem.Name)
-                            </h3>
-                            <h6>
-                                CVR:  @Html.DisplayFor(modelItem => modelItem.CVR)
-                            </h6>
-                            <h5>Descroption</h5>
-                            @Html.DisplayFor(modelItem => modelItem.Description)
-
-
-                        </td>
-
-                    </tr>
-                </table>
-            </div>
-            <div class="tab-pane fade in" id="tab2">
-                <table class="table">
-                    <tr>
-                        <td>
-                            <h4>
-                                Telephone:  @Html.DisplayFor(modelItem => modelItem.Tel)
-                            </h4>
-                            <h4>
-                                Opening Hours: @Html.DisplayFor(modelItem => modelItem.OpenHours)
-                            </h4>
-                            <h4>
-                                Our Website: @Html.DisplayFor(modelItem => modelItem.WebSite)
-
-                            </h4>
-
-
-                        </td>
-
-                    </tr>
-                </table>
+                </div>
             </div>
 
-            <div class="tab-pane fade in" id="tab3">
+            <div class="btn-pref btn-group btn-group-justified btn-group-lg" role="group" aria-label="...">
+                <div class="btn-group" role="group">
+                    <a href="#tab1" data-toggle="tab" id=" stars" class="btn btn-primary " role="button"> <div class="hidden-xs">About Us</div></a>
+                    @*<button type="button" id="stars" class="btn btn-primary" href="#tab1" data-toggle="tab">*@
+                    <span aria-hidden="true"></span>
+                    @*  <div class="hidden-xs">About Us</div>
+                        </button>*@
+                </div>
+                <div class="btn-group" role="group">
+                    <a href="#tab2" data-toggle="tab" id=" favorites" class="btn btn-default " role="button"><div class="hidden-xs"> Contact Info</div></a>
+
+                    @*<button type="button" id="favorites" class="btn btn-default" href="#tab2" data-toggle="tab">*@
+                    <span aria-hidden="true"></span>
+                    @* <div class="hidden-xs">Contact Us</div>
+                        </button>*@
+                </div>
+                <div class="btn-group" role="group">
+                    <a href="#tab3" data-toggle="tab" id="following " class="btn btn-default " role="button"<div class="hidden-xs"> Rating and reviews</div></a>
+
+                    @*<button type="button" id="following" class="btn btn-default" href="#tab3" data-toggle="tab">*@
+                    <span aria-hidden="true"></span>
+                    @*   <div class="hidden-xs">Rating And Reviews</div>
+                        </button>*@
+                </div>
+            </div>
 
 
+            <div class="well">
+                <div class="tab-content">
+                    <div class="tab-pane fade in active" id="tab1">
+                        <table class="table">
+                            <tr>
+                                <td>
+                                    @if (Model.Badges != null)
+                                    {
+                                        for (int i = 0; i < Model.Badges.Count(); ++i)
+                                        {
+                                            <img src="@Model.Badges.ElementAt(i).ImgPath" width="100" height="100" align="right">
+                                        }
+                                    }
+                                    <h3>
+                                        @Html.DisplayFor(modelItem => modelItem.Name)
+                                    </h3>
+                                    <h6>
+                                        CVR:  @Html.DisplayFor(modelItem => modelItem.CVR)
+                                    </h6>
+                                    <h5>Descroption</h5>
+                                    @Html.DisplayFor(modelItem => modelItem.Description)
 
-                <div class="progress" style="width:254px;">
-                    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow=@Model.avgQua aria-valuemin="0" aria-valuemax="100" style="width: @Model.avgQua%">
-                        Quality @(Model.avgQua / 10)
+
+                                </td>
+
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="tab-pane fade in" id="tab2">
+                        <table class="table">
+                            <tr>
+                                <td>
+                                    <h4>
+                                        Telephone:  @Html.DisplayFor(modelItem => modelItem.Tel)
+                                    </h4>
+                                    <h4>
+                                        Opening Hours: @Html.DisplayFor(modelItem => modelItem.OpenHours)
+                                    </h4>
+                                    <h4>
+                                        Our Website: @Html.DisplayFor(modelItem => modelItem.WebSite)
+
+                                    </h4>
+
+
+                                </td>
+
+                            </tr>
+                        </table>
                     </div>
 
-                </div>
-
-                <div class="progress" style="width:254px;">
-                    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow=@Model.avgCust aria-valuemin="0" aria-valuemax="100" style="width: @Model.avgCust%">
-                        Customer Service @(Model.avgCust / 10)
-                    </div>
-                </div>
-
-                <div class="progress" style="width:254px;">
-                    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow=@Model.avgPrice aria-valuemin="0" aria-valuemax="100" style="width: @Model.avgPrice%">
-                        Price @(Model.avgPrice / 10)
-                    </div>
-                </div>
-
-                <div class="progress" style="width:254px;">
-                    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow=@Model.overall aria-valuemin="0" aria-valuemax="100" style="width: @Model.overall%">
-                        Overall @(Model.overall / 10)
-                    </div>
-                </div>
+                    <div class="tab-pane fade in" id="tab3">
 
 
-                @Html.ActionLink("Rate", "AddRating", new { id = Model.Id })
 
-                @*<div style="text-decoration:solid;  margin-right:10px;">
-                        <button type="button" onclick="location.href='@Url.Action("Rate","AddRating", new { id = Model.Id})'" class="btn btn-info">Rate!</button>
-                    </div>*@
+                        <div class="progress" style="width:254px;">
+                            <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow=@Model.avgQua aria-valuemin="0" aria-valuemax="100" style="width: @Model.avgQua%">
+                                Quality @(Model.avgQua / 10)
+                            </div>
 
-                @Html.Label("Reviews")
-                <table>
-                    <tr>
-                        <td>
-                            @Html.Label("Title")
-                        </td>
-                        <td>
-                            @Html.Label("Text")
-                        </td>
-                    </tr>
+                        </div>
 
-                    @foreach (var item in Model.Reviews)
+                        <div class="progress" style="width:254px;">
+                            <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow=@Model.avgCust aria-valuemin="0" aria-valuemax="100" style="width: @Model.avgCust%">
+                                Customer Service @(Model.avgCust / 10)
+                            </div>
+                        </div>
+
+                        <div class="progress" style="width:254px;">
+                            <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow=@Model.avgPrice aria-valuemin="0" aria-valuemax="100" style="width: @Model.avgPrice%">
+                                Price @(Model.avgPrice / 10)
+                            </div>
+                        </div>
+
+                        <div class="progress" style="width:254px;">
+                            <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow=@Model.overall aria-valuemin="0" aria-valuemax="100" style="width: @Model.overall%">
+                                Overall @(Model.overall / 10)
+                            </div>
+                        </div>
+
+
+                        @Html.ActionLink("Rate", "AddRating", new { id = Model.Id })
+
+                        @*<div style="text-decoration:solid;  margin-right:10px;">
+                                <button type="button" onclick="location.href='@Url.Action("Rate","AddRating", new { id = Model.Id})'" class="btn btn-info">Rate!</button>
+                            </div>*@
+
+                        @Html.Label("Reviews")
+                        <table>
+                            <tr>
+                                <td>
+                                    @Html.Label("Title")
+                                </td>
+                                <td>
+                                    @Html.Label("Text")
+                                </td>
+                            </tr>
+
+                            @foreach (var item in Model.Reviews)
             {
-                        <tr class="well">
-                            <td style="font-weight:lighter;">
-                                @Html.DisplayFor(modelItem => item.Title) &nbsp;&nbsp;
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Text)
-                            </td>
+                                <tr class="well">
+                                    <td style="font-weight:lighter;">
+                                        @Html.DisplayFor(modelItem => item.Title) &nbsp;&nbsp;
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Text)
+                                    </td>
 
-                        </tr>
+                                </tr>
 
-                    }
+                            }
 
-                </table>
-                @Html.ActionLink("Write a Review", "AddReview", new { id = Model.Id })
+                        </table>
+                        @Html.ActionLink("Write a Review", "AddReview", new { id = Model.Id })
 
 
+                    </div>
+                </div>
             </div>
         </div>
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $(".btn-pref .btn").click(function () {
+                    $(".btn-pref .btn").removeClass("btn-primary").addClass("btn-default");
+                    // $(".tab").addClass("active"); // instead of this do the below
+                    $(this).removeClass("btn-default").addClass("btn-primary");
+                });
+            });
+
+        </script>
+        </div>
     </div>
-</div>
-
-<script type="text/javascript">
-    $(document).ready(function () {
-        $(".btn-pref .btn").click(function () {
-            $(".btn-pref .btn").removeClass("btn-primary").addClass("btn-default");
-            // $(".tab").addClass("active"); // instead of this do the below
-            $(this).removeClass("btn-default").addClass("btn-primary");
-        });
-    });
-
-</script>
