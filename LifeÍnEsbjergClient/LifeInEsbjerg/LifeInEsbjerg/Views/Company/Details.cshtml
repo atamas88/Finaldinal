@@ -67,7 +67,7 @@
                 </div>
             </div>
             <hr />
-            <div class="row">               
+            <div class="col-md-12">               
                 <h3>Description</h3>
                 @Html.DisplayFor(modelItem => modelItem.Description)
             </div>
@@ -94,6 +94,7 @@
                     <br /><br />
                     <div class="well container">
                        <h3>@Html.Label("Reviews")</h3>
+                        
                        @foreach (var item in Model.Reviews)
                        {
                          <div class="col-md-12" style="color:dodgerblue">
