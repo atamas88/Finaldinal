@@ -8,8 +8,10 @@ using System.Threading.Tasks;
 
 namespace LifeInEsbjergDAL.Context
 {
-    public class LifeInContextInitializer : DropCreateDatabaseAlways<LifeInContext>
+    
+    public class LifeInContextInitializer : DropCreateDatabaseIfModelChanges<LifeInContext>
     {
+
 
         protected override void Seed(LifeInContext context)
         {

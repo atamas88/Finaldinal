@@ -1,8 +1,12 @@
 ﻿using LifeInEsbjergDAL.Context;
 using LifeInEsbjergDAL.DomainModel;
 using LifeInEsbjergDAL.Repository.Interface;
+using LifeInEsbjergRest1.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace LifeInEsbjergDAL.Repository
 {
@@ -10,7 +14,7 @@ namespace LifeInEsbjergDAL.Repository
     {
         public void Add(Badge item)
         {
-            using (var ctx = new LifeInContext())
+            using (var ctx = new ApplicationDbContext())
             {
                 ctx.Badges.Attach(item);
                 ctx.Badges.Add(item);
@@ -21,7 +25,7 @@ namespace LifeInEsbjergDAL.Repository
         public void Delete(int id)
         {
             Badge Badge = Find(id);
-            using (var ctx = new LifeInContext())
+            using (var ctx = new ApplicationDbContext())
             {
                 ctx.Badges.Attach(Badge);
                 ctx.Badges.Remove(Badge);
@@ -31,7 +35,7 @@ namespace LifeInEsbjergDAL.Repository
 
         public void Edit(Badge item)
         {
-            using (var ctx = new LifeInContext())
+            using (var ctx = new ApplicationDbContext())
             {
                 var BadgeDB = ctx.Badges.FirstOrDefault(x => x.Id == item.Id);
 
@@ -56,7 +60,7 @@ namespace LifeInEsbjergDAL.Repository
 
         public List<Badge> ReadAll()
         {
-            using (var ctx = new LifeInContext())
+            using (var ctx = new ApplicationDbContext())
             {
                 return ctx.Badges.ToList();
             }

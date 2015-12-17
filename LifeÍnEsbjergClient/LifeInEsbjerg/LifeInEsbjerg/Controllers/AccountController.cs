@@ -16,7 +16,7 @@ namespace LifeInEsbjerg.Controllers
     public class AccountController : ApiController
     {
         
-        [Authorize(Roles = "User")]
+        //[Authorize(Roles = "User")]
         // GET: Account/Register
         public ActionResult Register(int ? id)
         {
@@ -32,13 +32,13 @@ namespace LifeInEsbjerg.Controllers
 
             return View(model);
         }
-        [Authorize(Roles = "User")]
+        //[Authorize(Roles = "User")]
         public ActionResult SelectRole()
         {
             return View();
         }
 
-        [Authorize(Roles = "User")]
+        //[Authorize(Roles = "User")]
         [HttpPost]
         public async Task<ActionResult> Register(RegisterModel model)
         {

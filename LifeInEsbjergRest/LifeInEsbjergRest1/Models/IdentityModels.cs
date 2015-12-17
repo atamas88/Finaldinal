@@ -34,7 +34,7 @@ namespace LifeInEsbjergRest1.Models
         }
     }
 
-    public class ApplicationContextInitializer : DropCreateDatabaseAlways<ApplicationDbContext>
+    public class ApplicationContextInitializer : DropCreateDatabaseIfModelChanges<ApplicationDbContext>
     {
 
         protected override void Seed(ApplicationDbContext context)

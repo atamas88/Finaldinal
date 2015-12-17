@@ -14,6 +14,7 @@ namespace LifeInEsbjergDAL.Context
         {
             Database.SetInitializer(new LifeInContextInitializer());
 
+
             //Add this line to make json conversin happy.
             Configuration.ProxyCreationEnabled = false;
         }

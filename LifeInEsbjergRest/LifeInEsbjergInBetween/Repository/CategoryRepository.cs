@@ -1,48 +1,52 @@
 ﻿using LifeInEsbjergDAL.Context;
 using LifeInEsbjergDAL.DomainModel;
 using LifeInEsbjergDAL.Repository.Interface;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace LifeInEsbjergDAL.Repository
 {
-    public class BadgeRepository : IRepository<Badge>
+    public class CategoryRepository : IRepository<Category>
     {
-        public void Add(Badge item)
+        private List<Category> categories = new List<Category>();
+
+        public void Add(Category category)
         {
             using (var ctx = new LifeInContext())
             {
-                ctx.Badges.Attach(item);
-                ctx.Badges.Add(item);
+                ctx.Categories.Attach(category);
+                ctx.Categories.Add(category);
                 ctx.SaveChanges();
             }
         }
 
         public void Delete(int id)
         {
-            Badge Badge = Find(id);
+            Category category = Find(id);
             using (var ctx = new LifeInContext())
             {
-                ctx.Badges.Attach(Badge);
-                ctx.Badges.Remove(Badge);
+                ctx.Categories.Attach(category);
+                ctx.Categories.Remove(category);
                 ctx.SaveChanges();
             }
         }
 
-        public void Edit(Badge item)
+        public void Edit(Category category)
         {
             using (var ctx = new LifeInContext())
             {
-                var BadgeDB = ctx.Badges.FirstOrDefault(x => x.Id == item.Id);
+                var categoryDB = ctx.Companies.FirstOrDefault(x => x.Id == category.Id);
 
-                BadgeDB.Name = item.Name;
+                categoryDB.Name = category.Name;
                 ctx.SaveChanges();
             }
         }
 
-        public Badge Find(int id)
+        public Category Find(int id)
         {
-
             foreach (var item in ReadAll())
             {
                 if (item.Id == id)
@@ -54,11 +58,11 @@ namespace LifeInEsbjergDAL.Repository
             return null;
         }
 
-        public List<Badge> ReadAll()
+        public List<Category> ReadAll()
         {
             using (var ctx = new LifeInContext())
             {
-                return ctx.Badges.ToList();
+                return ctx.Categories.ToList();
             }
         }
     }
