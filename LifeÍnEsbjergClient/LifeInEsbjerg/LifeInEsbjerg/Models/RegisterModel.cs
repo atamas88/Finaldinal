@@ -23,7 +23,7 @@ namespace LifeInEsbjerg.Models
         [Required, Compare("Password"), Display(Name = "Password (again)")]
         public string ConfirmPassword { get; set; }
 
-        public string Role { get; set; }
+        public string Roles { get; set; }
 
 
     }

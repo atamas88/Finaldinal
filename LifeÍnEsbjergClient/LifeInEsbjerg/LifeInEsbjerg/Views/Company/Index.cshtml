@@ -3,6 +3,9 @@
 @{
     ViewBag.Title = "Company";
 }
+
+
+
 <div class="container cont">
     <div class="row">
         <h1>Companies</h1>
@@ -17,11 +20,22 @@
                 @{Html.RenderAction("ListOfTags", "Company"); }
             </div>
                     }
+        @if(User.Identity.IsAuthenticated && User.IsInRole("Company"))
+        {
+            <p>Its a company</p>
+        }
+        else if (User.Identity.IsAuthenticated && User.IsInRole("User"))
+        {
+            <p>Its a company</p>
 
+        }
+        else
+        {
+            <p>Dunnoo!!</p>        }
         <div class="col-md-10">
             @foreach (var item in Model)
             {
-
+                
                 <div class="well" style="background-color:white;">
                     <div class="media">
                         <a class="pull-left" href="#">

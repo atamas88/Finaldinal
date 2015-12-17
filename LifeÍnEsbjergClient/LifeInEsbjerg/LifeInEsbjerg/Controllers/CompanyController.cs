@@ -11,18 +11,22 @@ using System.Web.Mvc;
 
 namespace LifeInEsbjerg.Controllers
 {
+    
     public class CompanyController : Controller
     {
         private Facade facade = new Facade();
 
+        [Authorize(Roles = "User")]
         // GET: Company
         public ActionResult Index(string searchString, int? id)
         {
+
             IEnumerable<Company> companies = facade.GetCompanyGateway().ReadAll();
             IEnumerable<Category> categories = facade.GetCategoryGateway().ReadAll();
             IEnumerable<Company> companies1 = facade.GetCompanyGateway().ReadAll();
             IList<Company> companies2 = new List<Company>();
-
+            
+            
 
             if (!String.IsNullOrEmpty(searchString))
             {

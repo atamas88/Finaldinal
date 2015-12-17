@@ -14,6 +14,7 @@ namespace LifeInEsbjergRest1.Models
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
             var userIdentity = await manager.CreateIdentityAsync(this, authenticationType);
+            //DefaultAuthenticationTypes.ApplicationCookie
             // Add custom user claims here
             return userIdentity;
         }

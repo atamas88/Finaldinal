@@ -20,14 +20,14 @@ namespace LifeInEsbjerg.Controllers
         // GET: Account/Register
         public ActionResult Register(int ? id)
         {
-            var model = new RegisterViewModel() { };
+            var model = new RegisterModel() { };
             if (id == 1)
             {
-                model.Role = "User";
+                model.Roles = "User";
             }
             if (id == 2)
             {
-                model.Role = " Company";
+                model.Roles = " Company";
             }
 
             return View(model);
