@@ -50,9 +50,27 @@ namespace LifeInEsbjerg.Controllers
 
             try
             {
-                model.Email = "*User*" + model.Email;
+                if(model.Role == "User")
+                {
+                    model.Email = "*User*" + model.Email;
+                }
+                else
+                {
+                    model.Email = "*Comp*" + model.Email;
+                }
+                
                 await WebApiService.Instance.PostAsync("/api/Account/Register", model);
-                return View("Registered");
+
+                if (model.Role == "User")
+                {
+                    return RedirectToAction("Index", "Company");
+                }
+                else
+                {
+                    return RedirectToAction("Create", "Company", routeValues:new {userName = model.Email });
+                }
+
+               
             }
             catch (ApiException ex)
             {

@@ -14,6 +14,7 @@ namespace LifeInEsbjerg.Models.ViewModel
 
         public int selectedCat { get; set; }
 
+        public string userName { get; set; }
 
         public MultiSelectList Tags { get; set; }
 

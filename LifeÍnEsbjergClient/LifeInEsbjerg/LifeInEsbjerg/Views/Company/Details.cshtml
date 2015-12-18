@@ -106,6 +106,10 @@
                         <button type="button" class="btn btn-default">@Html.ActionLink("Write a Review", "AddReview", new { id = Model.Id })</button>
 
                       }
+                      else
+                      {
+                        <p>Only Private Users can write a review, please Sign In or Register</p>
+                      }
                      
                       <br /><br />
                       <div class="well container">
