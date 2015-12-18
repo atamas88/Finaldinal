@@ -20,7 +20,7 @@ namespace LifeInEsbjergDAL.DomainModel
         [DataMember]
         public string Name { get; set; }
 
-        [DataMember]
+      
         public virtual ICollection<Company> Companies { get; set; }
     }
 }

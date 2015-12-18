@@ -107,35 +107,6 @@ namespace LifeInEsbjergDAL.Repository
                 {
                     companyDB.Badges.Add(ctx.Badges.FirstOrDefault(x => x.Id == item.Id));
                 }
-
-                //companyDB.CVR = company.CVR;
-                //companyDB.Name = company.Name;
-                //companyDB.ImageUrl = company.ImageUrl;
-                //companyDB.Address = company.Address;
-                //companyDB.WebSite = company.WebSite;
-                //companyDB.Tel = company.Tel;
-                //companyDB.OpenHours = company.OpenHours;
-                //companyDB.MinPrice = company.MinPrice;
-                //companyDB.MaxPrice = company.MaxPrice;
-                //companyDB.Description = company.Description;
-                //companyDB.NrRate = company.NrRate;
-                //companyDB.AvgOvr = company.AvgOvr;
-                //companyDB.Category = company.Category;
-                //companyDB.Ratings = company.Ratings;
-                //companyDB.Tags = company.Tags;
-                //ctx.Entry(company.Category).State = EntityState.Unchanged;
-                //foreach (var item in company.Tags)
-                //{
-                //    ctx.Entry(item).State = EntityState.Unchanged;
-                //}
-                //ctx.Entry(company.Tags).State = EntityState.Unchanged;
-
-                //companyDB.Ratings = company.Ratings;
-                //foreach (var item in company.Ratings)
-                //{
-                //    ctx.Entry(item).State = EntityState.Unchanged;
-                //}
-
                 companyDB.NrRate = companyDB.Ratings.Count();
                 ctx.SaveChanges();
 

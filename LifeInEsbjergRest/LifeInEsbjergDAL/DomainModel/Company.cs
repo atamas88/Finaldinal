@@ -19,6 +19,9 @@ namespace LifeInEsbjergDAL.DomainModel
         public int Id { get; set; }
 
         [DataMember]
+        public string userName { get; set; }
+
+        [DataMember]
         public int CVR { get; set; }
 
         [StringLength(50)]

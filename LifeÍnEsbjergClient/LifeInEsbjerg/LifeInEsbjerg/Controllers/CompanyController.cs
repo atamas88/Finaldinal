@@ -98,10 +98,11 @@ namespace LifeInEsbjerg.Controllers
             IEnumerable<Tag> tags = facade.GetTagGateway().ReadAll();
             return PartialView(tags);
         }
-        public ActionResult Create()
+        public ActionResult Create(string userName)
         {
             var model = new LifeInEsbjergViewModel() { Category = new SelectList(facade.GetCategoryGateway().ReadAll(), "Id", "Name"),
-                                                        Tags = new MultiSelectList(facade.GetTagGateway().ReadAll(), "Id", "Name")};
+                                                        Tags = new MultiSelectList(facade.GetTagGateway().ReadAll(), "Id", "Name"),
+                                                        userName = userName};
             return View(model);
         }
         [HttpPost]
@@ -136,8 +137,11 @@ namespace LifeInEsbjerg.Controllers
                 model.Company.Tags = newList;
             }
             model.Company.Ratings = new List<Rating>();
+            model.Company.Reviews = new List<Review>();
+            model.Company.Badges = new List<Badge>();
             model.Company.NrRate = 0;
-           
+            model.Company.userName = model.userName;
+
             facade.GetCompanyGateway().Add(model.Company);
             
             return RedirectToAction("Index", "Company");

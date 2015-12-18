@@ -17,6 +17,7 @@ namespace LifeInEsbjergDAL.Context
 
             //Add this line to make json conversin happy.
             Configuration.ProxyCreationEnabled = false;
+            this.Configuration.LazyLoadingEnabled = false;
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
