@@ -30,8 +30,8 @@
                     @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
                 </div>
             </div>
-            @Html.LabelFor(m => m.Role)
-            <input type="hidden" value="@Model.Role" name="Role">
+            @Html.LabelFor(m => m.Roles)
+            <input type="hidden" value="@Model.Roles" name="Role">
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
                     <input type="submit" class="btn btn-default" value="Register" />
