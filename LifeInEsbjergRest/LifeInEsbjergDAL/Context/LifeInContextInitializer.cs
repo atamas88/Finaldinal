@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace LifeInEsbjergDAL.Context
 {
     
-    public class LifeInContextInitializer : DropCreateDatabaseIfModelChanges<LifeInContext>
+    public class LifeInContextInitializer : DropCreateDatabaseAlways<LifeInContext>
     {
 
 

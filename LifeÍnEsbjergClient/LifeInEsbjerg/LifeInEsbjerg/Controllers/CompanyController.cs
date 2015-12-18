@@ -15,18 +15,25 @@ namespace LifeInEsbjerg.Controllers
     public class CompanyController : Controller
     {
         private Facade facade = new Facade();
-
-        [Authorize(Roles = "User")]
+        
         // GET: Company
         public ActionResult Index(string searchString, int? id)
         {
-
             IEnumerable<Company> companies = facade.GetCompanyGateway().ReadAll();
             IEnumerable<Category> categories = facade.GetCategoryGateway().ReadAll();
             IEnumerable<Company> companies1 = facade.GetCompanyGateway().ReadAll();
             IList<Company> companies2 = new List<Company>();
-            
-            
+            bool igaze = false;
+            string role = User.Identity.Name;
+            string rr = new string(role.Take(6).ToArray());
+            if(rr == "*User*")
+            {
+                igaze = true;
+            }
+            if(igaze)
+            {
+
+            }
 
             if (!String.IsNullOrEmpty(searchString))
             {
@@ -65,7 +72,7 @@ namespace LifeInEsbjerg.Controllers
                 }
             }
 
-            companies = companies.OrderByDescending(c => c.AvgOvr);
+         //   companies = companies.OrderByDescending(c => c.overall);
             return View(companies);
 
         }
@@ -75,7 +82,7 @@ namespace LifeInEsbjerg.Controllers
         public ActionResult GetNewestCompanies()
         {
             IEnumerable<Company> companies = facade.GetCompanyGateway().ReadAll();
-            companies = companies.OrderByDescending(c => c.AvgOvr).Take(6);
+       //     companies = companies.OrderByDescending(c => c.NrRate).Take(6);
             return PartialView(companies);
         }
 
@@ -130,6 +137,7 @@ namespace LifeInEsbjerg.Controllers
             }
             model.Company.Ratings = new List<Rating>();
             model.Company.NrRate = 0;
+           
             facade.GetCompanyGateway().Add(model.Company);
             
             return RedirectToAction("Index", "Company");

@@ -117,7 +117,11 @@ namespace LifeInEsbjergRest1.Controllers
                 return GetErrorResult(result);
             }
 
+<<<<<<< HEAD
             UserManager.AddToRole(user.Id, model.Roles);
+=======
+            //UserManager.AddToRole(user.Id, model.Roles);
+>>>>>>> 7f0761693de01b82f044bcd47e4a7f53d33e311f
 
             return Ok();
         }
