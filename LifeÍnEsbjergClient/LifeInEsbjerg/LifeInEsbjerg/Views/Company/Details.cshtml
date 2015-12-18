@@ -46,8 +46,14 @@
                             </div>
                             <br />
                             @*if(User.Identity.IsAuthenticated && User.IsInRole("User") || User.IsInRole("Admin"))*@
-                            <button type="button" style="color:white;" class="btn btn-default">@Html.ActionLink("Rate", "AddRating", new { id = Model.Id })</button>
-                        
+                            @if (new string(User.Identity.Name.Take(6).ToArray()) == "*User*")
+                            {
+                                <button type="button" style="color:white;" class="btn btn-default">@Html.ActionLink("Rate", "AddRating", new { id = Model.Id })</button>
+                            }
+                            else
+                            {
+                                <p>Only Private Users can rate a company, please Sign In or Register</p>
+                            }
                         </div>
                         <div class="col-md-offset-8">
                             <div class="list-group" style="text-align:right;">
@@ -95,7 +101,11 @@
                   </table>
 
                   <div>
-                      <button type="button" class="btn btn-default">@Html.ActionLink("Write a Review", "AddReview", new { id = Model.Id })</button>
+                      @if (new string(User.Identity.Name.Take(6).ToArray()) == "*User*")
+                      {
+                        <button type="button" class="btn btn-default">@Html.ActionLink("Write a Review", "AddReview", new { id = Model.Id })</button>
+
+                      }
                      
                       <br /><br />
                       <div class="well container">

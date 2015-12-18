@@ -18,16 +18,17 @@ namespace LifeInEsbjerg.Controllers
         
         //[Authorize(Roles = "User")]
         // GET: Account/Register
+        [HttpGet]
         public ActionResult Register(int ? id)
         {
-            var model = new RegisterModel() { };
+            var model = new RegisterViewModel() { };
             if (id == 1)
             {
-                model.Roles = "User";
+                model.Role = "User";
             }
             if (id == 2)
             {
-                model.Roles = " Company";
+                model.Role = " Company";
             }
 
             return View(model);
@@ -40,7 +41,7 @@ namespace LifeInEsbjerg.Controllers
 
         //[Authorize(Roles = "User")]
         [HttpPost]
-        public async Task<ActionResult> Register(RegisterModel model)
+        public async Task<ActionResult> Register(RegisterViewModel model)
         {
             if (!ModelState.IsValid)
             {
@@ -49,6 +50,7 @@ namespace LifeInEsbjerg.Controllers
 
             try
             {
+                model.Email = "*User*" + model.Email;
                 await WebApiService.Instance.PostAsync("/api/Account/Register", model);
                 return View("Registered");
             }

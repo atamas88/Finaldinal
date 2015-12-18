@@ -20,7 +20,7 @@ namespace LifeInEsbjergDAL.Repository
             {
 
                 //ctx.Companies.Include("Rating")
-                return ctx.Companies.Include("Category").Include(c => c.Ratings).Include("Reviews").Include("Tags").Include("Badges").ToList();
+                return ctx.Companies.Include("Category").Include(c => c.Ratings).Include("Reviews").Include(c => c.Tags).Include("Badges").ToList();
 
             }
         }

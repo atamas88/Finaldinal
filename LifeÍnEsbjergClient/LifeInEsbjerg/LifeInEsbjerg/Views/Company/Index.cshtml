@@ -20,7 +20,13 @@
                 @{Html.RenderAction("ListOfTags", "Company"); }
             </div>
                     }
-        @if(User.Identity.IsAuthenticated && User.IsInRole("Company"))
+        @if(new string(User.Identity.Name.Take(6).ToArray()) == "*User*")
+        {
+            <p>You are a fucking user</p>
+        }
+
+
+        @*@if(User.Identity.IsAuthenticated && User.IsInRole("Company"))
         {
             <p>Its a company</p>
         }
@@ -31,7 +37,7 @@
         }
         else
         {
-            <p>Dunnoo!!</p>        }
+            <p>Dunnoo!!</p>        }*@
         <div class="col-md-10">
             @foreach (var item in Model)
             {
