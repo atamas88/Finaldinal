@@ -24,7 +24,7 @@
                         <div style="margin-top:18px;" class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav">
                                 <li class="">@Html.ActionLink("Home", "Index", "Home")</li>
-                                <li> @Html.ActionLink("Company ", "index", "Company")</li>
+                                <li> @Html.ActionLink("Companies ", "Index", "Company",routeValues: new { id = 1 },htmlAttributes: null)</li>
                                 <li> @Html.ActionLink("About Us", "About", "Home")</li>
                                 <li> @Html.ActionLink("Contact", "Contact", "Home")</li>
                                 @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
