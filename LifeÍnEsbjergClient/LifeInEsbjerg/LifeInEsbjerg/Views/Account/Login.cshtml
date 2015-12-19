@@ -1,5 +1,4 @@
-﻿@using LifeInEsbjerg.Models
-@model SignInModel
+﻿@model LifeInEsbjerg.Models.LoginViewModel
 @{
     ViewBag.Title = "Log in";
 }
@@ -39,6 +38,8 @@
                 </div>
             </div>
         </div>
+        @Html.HiddenFor(model => model.userRole)
+        
 
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">

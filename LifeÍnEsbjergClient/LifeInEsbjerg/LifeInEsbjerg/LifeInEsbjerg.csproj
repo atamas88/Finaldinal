@@ -276,7 +276,7 @@
     <Content Include="Views\Company\AddReview.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Company\GetNewestCompanies.cshtml" />
-
+    <Content Include="Views\Account\LoginSelectRole.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace LifeInEsbjergDAL.Context
 {
     
-    public class LifeInContextInitializer : DropCreateDatabaseAlways<LifeInContext>
+    public class LifeInContextInitializer : DropCreateDatabaseIfModelChanges<LifeInContext>
     {
 
 
@@ -87,7 +87,8 @@ namespace LifeInEsbjergDAL.Context
                 Reviews = new List<Review>() { rev1 },
                 Tags = new List<Tag>() { tag1, tag2, tag3 },
                 NrRate = 1,
-                Badges = new List<Badge> { badge1}
+                Badges = new List<Badge> { badge1},
+                userName = "*Comp*kooo@j.hu"
 
             });
             companies.Add(new Company()

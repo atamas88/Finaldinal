@@ -7,27 +7,28 @@
         <div class="col-sm-6 col-md-4">
             <div class="thumbnail">
               
-                <img class="img-responsive" src="@item.ImageUrl" style="height:160px!important" />
-                <div class="col-md-12" style="margin-top:20px;">
-                    <div class="progress" style=" margin-bottom:-6px;">
-                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow=@item.overall aria-valuemin="0" aria-valuemax="100" style="width: @item.overall.ToString(".")%">
-                            Overal Rating @(item.AvgOvr)
+                <a href="@Url.Action(actionName:"Details", controllerName:"Company", routeValues:new { id = item.Id })">
+                    <img class="img-responsive" src="@item.ImageUrl" style="height:160px!important" /></a>
+                    <div class="col-md-12" style="margin-top:20px;">
+                        <div class="progress" style=" margin-bottom:-6px;">
+                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow=@item.overall aria-valuemin="0" aria-valuemax="100" style="width: @item.overall.ToString(".")%">
+                                Overal Rating @(item.AvgOvr)
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="caption" style="min-height:150px;">
-                    <h3>@item.Name</h3>
-                    <p>@item.Description</p>
-                    <br />
-                   
-                </div>
-                <hr />
-                <div class="col-md-12">
+                    <div class="caption" style="min-height:150px;">
+                        <h3><a href="@Url.Action(actionName:"Details", controllerName:"Company", routeValues:new { id = item.Id })">@item.Name</a></h3>
+                        <p>@item.Description</p>
+                        <br />
 
-                    <p class="btn btn-default">@Html.ActionLink("Details", "Details", new { id = item.Id })</p> <div style="float:right; margin-top:-32px;"><span class="label label-info">@item.Category.Name</span></div>
-                    <br /><br />
-                </div>
-            </div>
+                    </div>
+                    <hr />
+                    <div class="col-md-12">
+
+                        <p class="btn btn-default">@Html.ActionLink("Details", "Details", new { id = item.Id })</p> <div style="float:right; margin-top:-32px;"><span class="label label-info" onclick="location.href='@Url.Action("Index", "Company", new { id = item.Category.Id })'">@item.Category.Name</span></div>
+                        <br /><br />
+                    </div>
+</div>
         </div>
 
     }
@@ -40,27 +41,28 @@
         <div class="col-sm-6 col-md-4">
             <div class="thumbnail">
 
-                <img class="img-responsive" src="@item.ImageUrl" style="height:160px!important" />
-                <div class="col-md-12" style="margin-top:20px;">
-                    <div class="progress" style=" margin-bottom:-6px;">
-                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow=@item.overall aria-valuemin="0" aria-valuemax="100" style="width: @item.overall.ToString(".")%">
-                            Overal Rating @(item.AvgOvr)
+                <a href="@Url.Action(actionName:"Details", controllerName:"Company", routeValues:new { id = item.Id })">
+                    <img class="img-responsive" src="@item.ImageUrl" style="height:160px!important" /></a>
+                    <div class="col-md-12" style="margin-top:20px;">
+                        <div class="progress" style=" margin-bottom:-6px;">
+                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow=@item.overall aria-valuemin="0" aria-valuemax="100" style="width: @item.overall.ToString(".")%">
+                                Overal Rating @(item.AvgOvr)
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="caption" style="min-height:150px;">
-                    <h3>@item.Name</h3>
-                    <p>@item.Description</p>
-                    <br />
+                    <div class="caption" style="min-height:150px;">
+                        <h3><a href="@Url.Action(actionName:"Details", controllerName:"Company", routeValues:new { id = item.Id })">@item.Name</a></h3>
+                        <p>@item.Description</p>
+                        <br />
 
-                </div>
-                <hr />
-                <div class="col-md-12">
+                    </div>
+                    <hr />
+                    <div class="col-md-12">
 
-                    <p class="btn btn-default">@Html.ActionLink("Details", "Details", new { id = item.Id })</p> <div style="float:right; margin-top:-32px;"><span class="label label-info">@item.Category.Name</span></div>
-                    <br /><br />
-                </div>
-            </div>
+                        <p class="btn btn-default">@Html.ActionLink("Details", "Details", new { id = item.Id })</p> <div style="float:right; margin-top:-32px;"><span class="label label-info">@item.Category.Name</span></div>
+                        <br /><br />
+                    </div>
+</div>
         </div>
 
     }

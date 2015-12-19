@@ -72,7 +72,7 @@ namespace LifeInEsbjerg.Controllers
                 }
             }
 
-         //   companies = companies.OrderByDescending(c => c.overall);
+            companies = companies.OrderByDescending(c => c.overall);
             return View(companies);
 
         }
@@ -82,7 +82,7 @@ namespace LifeInEsbjerg.Controllers
         public ActionResult GetNewestCompanies()
         {
             IEnumerable<Company> companies = facade.GetCompanyGateway().ReadAll();
-       //     companies = companies.OrderByDescending(c => c.NrRate).Take(6);
+            companies = companies.OrderByDescending(c => c.NrRate).Take(6);
             return PartialView(companies);
         }
 
@@ -144,7 +144,7 @@ namespace LifeInEsbjerg.Controllers
 
             facade.GetCompanyGateway().Add(model.Company);
             
-            return RedirectToAction("Index", "Company");
+            return RedirectToAction("Login", "Account");
         }
 
        

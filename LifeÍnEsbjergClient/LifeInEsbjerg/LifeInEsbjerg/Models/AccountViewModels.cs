@@ -60,6 +60,8 @@ namespace LifeInEsbjerg.Models
 
         [Display(Name = "Remember me?")]
         public bool RememberMe { get; set; }
+
+        public string userRole { get; set; }
     }
 
     public class RegisterViewModel

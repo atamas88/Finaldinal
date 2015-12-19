@@ -20,7 +20,7 @@ namespace LifeInEsbjergDAL.Repository
             {
 
                 //ctx.Companies.Include("Rating")
-                return ctx.Companies.Include("Category").Include(c => c.Ratings).Include("Reviews").Include(c => c.Tags).Include("Badges").ToList();
+                return ctx.Companies.Include("Category").Include(c => c.Ratings).Include("Reviews").Include("Tags").Include("Badges").ToList();
 
             }
         }
@@ -28,14 +28,15 @@ namespace LifeInEsbjergDAL.Repository
         {
             using (var ctx = new LifeInContext())
             {
-                ctx.Companies.Add(company);
-                foreach (var item in company.Tags)
+                // !!!!! GOOOD VERSION DON`T YOU DARE TO CHANGE THIS !!!!!!!!!!!
+                foreach(var item in company.Tags)
                 {
-                    ctx.Tags.Remove(ctx.Tags.FirstOrDefault(x => x.Id == item.Id));
-                    ctx.Tags.Attach(ctx.Tags.FirstOrDefault(x => x.Id == item.Id));
+                    ctx.Entry(item).State = EntityState.Unchanged;
                 }
+                ctx.Companies.Add(company);
                 ctx.Entry(company.Category).State = EntityState.Unchanged;
                 ctx.SaveChanges();
+                //
             }
     }
 
