@@ -86,16 +86,30 @@ namespace LifeInEsbjerg.Controllers
             }
         }
 
-        // GET: Account/SignIn
-        public ActionResult Login(string returnUrl)
+        public ActionResult LoginSelectRole()
         {
-            Session["RedirectUrl"] = returnUrl;
             return View();
+        }
+
+        // GET: Account/SignIn
+        public ActionResult Login(int? id)
+        {
+            //Session["RedirectUrl"] = returnUrl;
+            var model = new LoginViewModel() { };
+            if(id == 1)
+            {
+                model.userRole = "*User*";
+            }
+            else
+            {
+                model.userRole = "*Comp*";
+            }
+            return View(model);
         }
 
         // POST: Account/SignIn
         [HttpPost]
-        public async Task<ActionResult> Login(SignInModel model)
+        public async Task<ActionResult> Login(LoginViewModel model)
         {
             if (!ModelState.IsValid)
             {
@@ -104,9 +118,10 @@ namespace LifeInEsbjerg.Controllers
 
             try
             {
+                model.Email = model.Email.Insert(0,model.userRole);
                 //Find if there is a redirect Url. Then remove it for next time!
-                var redirectUrl = Session["RedirectUrl"] as string;
-                Session["RedirectUrl"] = null;
+                //var redirectUrl = Session["RedirectUrl"] as string;
+                //Session["RedirectUrl"] = null;
                 var result = await WebApiService.Instance.AuthenticateAsync<SignInResult>(model.Email, model.Password);
                 var userInfo = await WebApiService.Instance.GetAsync<UserModel>("/api/Account/me", result.AccessToken);
                 userInfo.Token = result.AccessToken;
