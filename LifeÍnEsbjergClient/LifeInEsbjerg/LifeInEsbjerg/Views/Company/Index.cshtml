@@ -59,7 +59,7 @@
                                 }
                             }
 
-                            @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+                            @if (new string(User.Identity.Name.Take(6).ToArray()) == "*Comp*" && item.userName == User.Identity.Name)
                             {
                                 <p class="text-right">@Html.ActionLink("Edit", "Edit", new { id = item.Id })</p>
                                 <p class="text-right">@Html.ActionLink("Delete", "Delete", new { id = item.Id })</p>

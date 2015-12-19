@@ -67,7 +67,7 @@ namespace LifeInEsbjerg.Controllers
                 }
                 else
                 {
-                    return RedirectToAction("Create", "Company", routeValues:new {userName = model.Email });
+                    return RedirectToAction("Create", "Company", routeValues:new {userName = model.Email});
                 }
 
                
@@ -116,7 +116,8 @@ namespace LifeInEsbjerg.Controllers
                 HttpCookie cookie = new HttpCookie(FormsAuthentication.FormsCookieName, FormsAuthentication.Encrypt(authTicket));
                 Response.Cookies.Add(cookie);
 
-                return Redirect(redirectUrl ?? "/");
+                //return Redirect(redirectUrl ?? "/");
+                return RedirectToAction("Index", "Home");
             }
             catch (ApiException ex)
             {

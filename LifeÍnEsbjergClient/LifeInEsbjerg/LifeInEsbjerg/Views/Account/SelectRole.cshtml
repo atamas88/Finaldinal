@@ -2,13 +2,19 @@
 
 @using (Html.BeginForm())
 {
-    <h4>Select Role</h4>
-    <h4>Select Role</h4>
-    <h4>Select Role</h4>
-    <h4>Select Role</h4>
-    <h4>Select Role</h4>
-    <h4>Select Role</h4>
-
-    @Html.ActionLink("User", "Register", routeValues: new { id = 1 }) <br>
-    @Html.ActionLink("Company", "Register", routeValues: new { id = 2 })
-}
+    <div class="carousel-inner">
+        <div class="item active">
+            <img src="~/Images/35H(1200x400).jpg" style="width:100%" alt="First slide">
+            <div class="container">
+                <div class="carousel-caption">
+                    <h1>Sign Up</h1>
+                    <p>Register as a Company to create a profile or as a Private User to rate them!</p>
+                    <p>
+                        <a class="btn btn-lg btn-primary" href="http://localhost:19968/Account/Register/2" role="button">Company</a>
+                        <a class="btn btn-lg btn-primary" href="http://localhost:19968/Account/Register/1" role="button">Private</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        </div>
+        }
