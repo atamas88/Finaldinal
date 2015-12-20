@@ -179,6 +179,10 @@ namespace LifeInEsbjerg.Controllers
         {
             return View();
         }
+        public ActionResult FutureProfile()
+        {
+            return View();
+        }
 
     }
 
