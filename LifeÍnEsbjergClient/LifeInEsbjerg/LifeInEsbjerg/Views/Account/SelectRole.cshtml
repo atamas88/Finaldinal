@@ -1,28 +1,43 @@
 ﻿
+@*<div class="container cont">
+    <div class="col-md-12">
+        <br /> <br />
+        <div class="jumbotron" style="background-color:white;">
+            <h1> User Type </h1>
+            <p>Here you can select what type of user profile you would like to create.</p>
+            @using (Html.BeginForm())
+            {
+                <div class="col-md-2">
+                   
+                </div>
 
+                <div class="col-md-2">
+                   
+                </div>
+            }
+            <br />
+        </div>
+        </div>
+    </div>*@
 @using (Html.BeginForm())
 {
-<<<<<<< HEAD
-    <h4>Select Role</h4>
-
-    @Html.ActionLink("User", "Register", routeValues: new { id = 1 }) <br>
-    @Html.ActionLink("Company", "Register", routeValues: new { id = 2 })
-}
-=======
     <div class="carousel-inner">
-        <div class="item active">
-            <img src="~/Images/35H(1200x400).jpg" style="width:100%" alt="First slide">
-            <div class="container">
-                <div class="carousel-caption">
-                    <h1>Sign Up</h1>
-                    <p>Register as a Company to create a profile or as a Private User to rate them!</p>
-                    <p>
-                        <a class="btn btn-lg btn-primary" href="http://localhost:19968/Account/Register/2" role="button">Company</a>
-                        <a class="btn btn-lg btn-primary" href="http://localhost:19968/Account/Register/1" role="button">Private</a>
-                    </p>
-                </div>
+
+        <img class="blur" src="~/Images/Register(1200x400).jpg" style="width:100%" alt="First slide">
+        <div class="container">
+            <div class="carousel-caption">
+                <h1>Register</h1>
+                <h3>Register as a Company or a Private User!</h3>
+                <p>
+                    <button type="button" class="btn btn-primary btn-lg">
+                        @Html.ActionLink("Company", "Register", new { id = 2 }, new { @style = "color:white;" })
+                    </button>
+                    <button type="button" class="btn btn-success btn-lg">
+                        @Html.ActionLink("User", "Register", new { id = 1 }, new { @style = "color:white;" })
+                    </button>                  
+                </p>
             </div>
         </div>
-        </div>
-        }
->>>>>>> 10c56c858cf946c2078d7b46f77b28f1964ef5bd
+
+    </div>
+}

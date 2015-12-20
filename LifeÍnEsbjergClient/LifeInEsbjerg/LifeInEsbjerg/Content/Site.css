@@ -401,3 +401,14 @@ border:1px solid #cccccc;
     color:white;
     height:40px;
 }
+
+.blur{
+
+}
+
+.navbar-default .navbar-nav>li>a{
+    color:white;
+}
+.navbar-default .navbar-nav>li>a:hover{
+    color:rgb(160, 160, 160);
+}
