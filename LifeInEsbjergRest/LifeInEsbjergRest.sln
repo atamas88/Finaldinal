@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LifeInEsbjergDAL", "LifeInE
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LifeInEsbjergRest1", "LifeInEsbjergRest1\LifeInEsbjergRest1.csproj", "{220CF4BC-447F-425C-96C8-33940DEDCE76}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LifeInEsbjergDALTests", "LifeInEsbjergDALTests\LifeInEsbjergDALTests.csproj", "{F952637F-E4B4-4772-8300-1753B408B260}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{220CF4BC-447F-425C-96C8-33940DEDCE76}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{220CF4BC-447F-425C-96C8-33940DEDCE76}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{220CF4BC-447F-425C-96C8-33940DEDCE76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F952637F-E4B4-4772-8300-1753B408B260}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F952637F-E4B4-4772-8300-1753B408B260}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F952637F-E4B4-4772-8300-1753B408B260}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F952637F-E4B4-4772-8300-1753B408B260}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
