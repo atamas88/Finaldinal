@@ -23,18 +23,6 @@ namespace LifeInEsbjerg.Controllers
             IEnumerable<Category> categories = facade.GetCategoryGateway().ReadAll();
             IEnumerable<Company> companies1 = facade.GetCompanyGateway().ReadAll();
             IList<Company> companies2 = new List<Company>();
-            bool igaze = false;
-            string role = User.Identity.Name;
-            string rr = new string(role.Take(6).ToArray());
-            if(rr == "*User*")
-            {
-                igaze = true;
-            }
-            if(igaze)
-            {
-
-            }
-
             if (!String.IsNullOrEmpty(searchString))
             {
                 //companies = companies.Where(s => s.Name.Contains(searchString));
